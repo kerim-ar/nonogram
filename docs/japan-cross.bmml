@@ -248,252 +248,233 @@
         <color>10066329</color>
       </controlProperties>
     </control>
-    <control controlID="263" controlTypeID="com.balsamiq.mockups::Label" x="489" y="360" w="28" h="-1" measuredW="27" measuredH="21" zOrder="48" locked="false" isInGroup="-1">
+    <control controlID="263" controlTypeID="com.balsamiq.mockups::Label" x="489" y="366" w="28" h="-1" measuredW="27" measuredH="21" zOrder="48" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>Test</text>
       </controlProperties>
     </control>
-    <control controlID="264" controlTypeID="com.balsamiq.mockups::Label" x="487" y="377" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="49" locked="false" isInGroup="-1">
+    <control controlID="264" controlTypeID="com.balsamiq.mockups::Label" x="487" y="383" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="49" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>10x10</text>
       </controlProperties>
     </control>
-    <control controlID="265" controlTypeID="com.balsamiq.mockups::ProgressBar" x="483" y="398" w="43" h="10" measuredW="100" measuredH="20" zOrder="50" locked="false" isInGroup="-1">
-      <controlProperties>
-        <indeterminate>false</indeterminate>
-        <scrollBarValue>43</scrollBarValue>
-      </controlProperties>
-    </control>
-    <control controlID="266" controlTypeID="com.balsamiq.mockups::Canvas" x="537" y="356" w="65" h="63" measuredW="100" measuredH="70" zOrder="51" locked="false" isInGroup="-1">
+    <control controlID="266" controlTypeID="com.balsamiq.mockups::Canvas" x="537" y="356" w="65" h="63" measuredW="100" measuredH="70" zOrder="50" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <borderStyle>roundedSolid</borderStyle>
         <color>10066329</color>
       </controlProperties>
     </control>
-    <control controlID="267" controlTypeID="com.balsamiq.mockups::Label" x="554" y="360" w="28" h="-1" measuredW="27" measuredH="21" zOrder="52" locked="false" isInGroup="-1">
+    <control controlID="267" controlTypeID="com.balsamiq.mockups::Label" x="554" y="366" w="28" h="-1" measuredW="27" measuredH="21" zOrder="51" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>Test</text>
       </controlProperties>
     </control>
-    <control controlID="268" controlTypeID="com.balsamiq.mockups::Label" x="552" y="377" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="53" locked="false" isInGroup="-1">
+    <control controlID="268" controlTypeID="com.balsamiq.mockups::Label" x="552" y="383" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="52" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>10x10</text>
       </controlProperties>
     </control>
-    <control controlID="269" controlTypeID="com.balsamiq.mockups::ProgressBar" x="548" y="398" w="43" h="10" measuredW="100" measuredH="20" zOrder="54" locked="false" isInGroup="-1">
-      <controlProperties>
-        <indeterminate>false</indeterminate>
-        <scrollBarValue>43</scrollBarValue>
-      </controlProperties>
-    </control>
-    <control controlID="270" controlTypeID="com.balsamiq.mockups::Canvas" x="602" y="356" w="65" h="63" measuredW="100" measuredH="70" zOrder="55" locked="false" isInGroup="-1">
+    <control controlID="270" controlTypeID="com.balsamiq.mockups::Canvas" x="602" y="356" w="65" h="63" measuredW="100" measuredH="70" zOrder="53" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <borderStyle>roundedSolid</borderStyle>
         <color>10066329</color>
       </controlProperties>
     </control>
-    <control controlID="271" controlTypeID="com.balsamiq.mockups::Label" x="619" y="360" w="28" h="-1" measuredW="27" measuredH="21" zOrder="56" locked="false" isInGroup="-1">
+    <control controlID="271" controlTypeID="com.balsamiq.mockups::Label" x="619" y="366" w="28" h="-1" measuredW="27" measuredH="21" zOrder="54" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>Test</text>
       </controlProperties>
     </control>
-    <control controlID="272" controlTypeID="com.balsamiq.mockups::Label" x="617" y="377" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="57" locked="false" isInGroup="-1">
+    <control controlID="272" controlTypeID="com.balsamiq.mockups::Label" x="617" y="383" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="55" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>10x10</text>
       </controlProperties>
     </control>
-    <control controlID="273" controlTypeID="com.balsamiq.mockups::ProgressBar" x="613" y="398" w="43" h="10" measuredW="100" measuredH="20" zOrder="58" locked="false" isInGroup="-1">
-      <controlProperties>
-        <indeterminate>false</indeterminate>
-        <scrollBarValue>43</scrollBarValue>
-      </controlProperties>
-    </control>
-    <control controlID="274" controlTypeID="com.balsamiq.mockups::Canvas" x="472" y="419" w="65" h="63" measuredW="100" measuredH="70" zOrder="59" locked="false" isInGroup="-1">
+    <control controlID="274" controlTypeID="com.balsamiq.mockups::Canvas" x="472" y="419" w="65" h="63" measuredW="100" measuredH="70" zOrder="56" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <borderStyle>roundedSolid</borderStyle>
         <color>10066329</color>
       </controlProperties>
     </control>
-    <control controlID="275" controlTypeID="com.balsamiq.mockups::Label" x="489" y="423" w="28" h="-1" measuredW="27" measuredH="21" zOrder="60" locked="false" isInGroup="-1">
+    <control controlID="275" controlTypeID="com.balsamiq.mockups::Label" x="489" y="429" w="28" h="-1" measuredW="27" measuredH="21" zOrder="57" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>Test</text>
       </controlProperties>
     </control>
-    <control controlID="276" controlTypeID="com.balsamiq.mockups::Label" x="487" y="440" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="61" locked="false" isInGroup="-1">
+    <control controlID="276" controlTypeID="com.balsamiq.mockups::Label" x="487" y="446" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="58" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>10x10</text>
       </controlProperties>
     </control>
-    <control controlID="277" controlTypeID="com.balsamiq.mockups::ProgressBar" x="483" y="461" w="43" h="10" measuredW="100" measuredH="20" zOrder="62" locked="false" isInGroup="-1">
-      <controlProperties>
-        <indeterminate>false</indeterminate>
-        <scrollBarValue>43</scrollBarValue>
-      </controlProperties>
-    </control>
-    <control controlID="278" controlTypeID="com.balsamiq.mockups::Canvas" x="537" y="419" w="65" h="63" measuredW="100" measuredH="70" zOrder="63" locked="false" isInGroup="-1">
+    <control controlID="278" controlTypeID="com.balsamiq.mockups::Canvas" x="537" y="419" w="65" h="63" measuredW="100" measuredH="70" zOrder="59" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <borderStyle>roundedSolid</borderStyle>
         <color>10066329</color>
       </controlProperties>
     </control>
-    <control controlID="279" controlTypeID="com.balsamiq.mockups::Label" x="554" y="423" w="28" h="-1" measuredW="27" measuredH="21" zOrder="64" locked="false" isInGroup="-1">
+    <control controlID="279" controlTypeID="com.balsamiq.mockups::Label" x="554" y="429" w="28" h="-1" measuredW="27" measuredH="21" zOrder="60" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>Test</text>
       </controlProperties>
     </control>
-    <control controlID="280" controlTypeID="com.balsamiq.mockups::Label" x="552" y="440" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="65" locked="false" isInGroup="-1">
+    <control controlID="280" controlTypeID="com.balsamiq.mockups::Label" x="552" y="446" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="61" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>10x10</text>
       </controlProperties>
     </control>
-    <control controlID="281" controlTypeID="com.balsamiq.mockups::ProgressBar" x="548" y="461" w="43" h="10" measuredW="100" measuredH="20" zOrder="66" locked="false" isInGroup="-1">
-      <controlProperties>
-        <indeterminate>false</indeterminate>
-        <scrollBarValue>43</scrollBarValue>
-      </controlProperties>
-    </control>
-    <control controlID="282" controlTypeID="com.balsamiq.mockups::Canvas" x="602" y="419" w="65" h="63" measuredW="100" measuredH="70" zOrder="67" locked="false" isInGroup="-1">
+    <control controlID="282" controlTypeID="com.balsamiq.mockups::Canvas" x="602" y="419" w="65" h="63" measuredW="100" measuredH="70" zOrder="62" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <borderStyle>roundedSolid</borderStyle>
         <color>10066329</color>
       </controlProperties>
     </control>
-    <control controlID="283" controlTypeID="com.balsamiq.mockups::Label" x="619" y="423" w="28" h="-1" measuredW="27" measuredH="21" zOrder="68" locked="false" isInGroup="-1">
+    <control controlID="283" controlTypeID="com.balsamiq.mockups::Label" x="619" y="429" w="28" h="-1" measuredW="27" measuredH="21" zOrder="63" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>Test</text>
       </controlProperties>
     </control>
-    <control controlID="284" controlTypeID="com.balsamiq.mockups::Label" x="617" y="440" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="69" locked="false" isInGroup="-1">
+    <control controlID="284" controlTypeID="com.balsamiq.mockups::Label" x="617" y="446" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="64" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>6710886</color>
         <text>10x10</text>
       </controlProperties>
     </control>
-    <control controlID="285" controlTypeID="com.balsamiq.mockups::ProgressBar" x="613" y="461" w="43" h="10" measuredW="100" measuredH="20" zOrder="70" locked="false" isInGroup="-1">
-      <controlProperties>
-        <indeterminate>false</indeterminate>
-        <scrollBarValue>43</scrollBarValue>
-      </controlProperties>
-    </control>
-    <control controlID="286" controlTypeID="com.balsamiq.mockups::Canvas" x="472" y="257" w="65" h="63" measuredW="100" measuredH="70" zOrder="71" locked="false" isInGroup="-1">
+    <control controlID="286" controlTypeID="com.balsamiq.mockups::Canvas" x="472" y="257" w="65" h="63" measuredW="100" measuredH="70" zOrder="65" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <borderStyle>roundedSolid</borderStyle>
         <color>16777215</color>
       </controlProperties>
     </control>
-    <control controlID="287" controlTypeID="com.balsamiq.mockups::Label" x="489" y="261" w="28" h="-1" measuredW="27" measuredH="21" zOrder="72" locked="false" isInGroup="-1">
+    <control controlID="287" controlTypeID="com.balsamiq.mockups::Label" x="489" y="261" w="28" h="-1" measuredW="27" measuredH="21" zOrder="66" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Test</text>
       </controlProperties>
     </control>
-    <control controlID="288" controlTypeID="com.balsamiq.mockups::Label" x="487" y="278" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="73" locked="false" isInGroup="-1">
+    <control controlID="288" controlTypeID="com.balsamiq.mockups::Label" x="487" y="278" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="67" locked="false" isInGroup="-1">
       <controlProperties>
         <text>10x10</text>
       </controlProperties>
     </control>
-    <control controlID="289" controlTypeID="com.balsamiq.mockups::ProgressBar" x="483" y="299" w="43" h="10" measuredW="100" measuredH="20" zOrder="74" locked="false" isInGroup="-1">
+    <control controlID="289" controlTypeID="com.balsamiq.mockups::ProgressBar" x="483" y="299" w="43" h="10" measuredW="100" measuredH="20" zOrder="68" locked="false" isInGroup="-1">
       <controlProperties>
         <indeterminate>false</indeterminate>
         <scrollBarValue>43</scrollBarValue>
       </controlProperties>
     </control>
-    <control controlID="290" controlTypeID="com.balsamiq.mockups::Canvas" x="537" y="257" w="65" h="63" measuredW="100" measuredH="70" zOrder="75" locked="false" isInGroup="-1">
+    <control controlID="290" controlTypeID="com.balsamiq.mockups::Canvas" x="537" y="257" w="65" h="63" measuredW="100" measuredH="70" zOrder="69" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <borderStyle>roundedSolid</borderStyle>
         <color>16777215</color>
       </controlProperties>
     </control>
-    <control controlID="291" controlTypeID="com.balsamiq.mockups::Label" x="554" y="261" w="28" h="-1" measuredW="27" measuredH="21" zOrder="76" locked="false" isInGroup="-1">
+    <control controlID="291" controlTypeID="com.balsamiq.mockups::Label" x="554" y="261" w="28" h="-1" measuredW="27" measuredH="21" zOrder="70" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Test</text>
       </controlProperties>
     </control>
-    <control controlID="292" controlTypeID="com.balsamiq.mockups::Label" x="552" y="278" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="77" locked="false" isInGroup="-1">
+    <control controlID="292" controlTypeID="com.balsamiq.mockups::Label" x="552" y="278" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="71" locked="false" isInGroup="-1">
       <controlProperties>
         <text>10x10</text>
       </controlProperties>
     </control>
-    <control controlID="293" controlTypeID="com.balsamiq.mockups::ProgressBar" x="548" y="299" w="43" h="10" measuredW="100" measuredH="20" zOrder="78" locked="false" isInGroup="-1">
+    <control controlID="293" controlTypeID="com.balsamiq.mockups::ProgressBar" x="548" y="299" w="43" h="10" measuredW="100" measuredH="20" zOrder="72" locked="false" isInGroup="-1">
       <controlProperties>
         <indeterminate>false</indeterminate>
         <scrollBarValue>43</scrollBarValue>
       </controlProperties>
     </control>
-    <control controlID="294" controlTypeID="com.balsamiq.mockups::Canvas" x="602" y="257" w="65" h="63" measuredW="100" measuredH="70" zOrder="79" locked="false" isInGroup="-1">
+    <control controlID="294" controlTypeID="com.balsamiq.mockups::Canvas" x="602" y="257" w="65" h="63" measuredW="100" measuredH="70" zOrder="73" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <borderStyle>roundedSolid</borderStyle>
         <color>16777215</color>
       </controlProperties>
     </control>
-    <control controlID="295" controlTypeID="com.balsamiq.mockups::Label" x="619" y="261" w="28" h="-1" measuredW="27" measuredH="21" zOrder="80" locked="false" isInGroup="-1">
+    <control controlID="295" controlTypeID="com.balsamiq.mockups::Label" x="619" y="261" w="28" h="-1" measuredW="27" measuredH="21" zOrder="74" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Test</text>
       </controlProperties>
     </control>
-    <control controlID="296" controlTypeID="com.balsamiq.mockups::Label" x="617" y="278" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="81" locked="false" isInGroup="-1">
+    <control controlID="296" controlTypeID="com.balsamiq.mockups::Label" x="617" y="278" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="75" locked="false" isInGroup="-1">
       <controlProperties>
         <text>10x10</text>
       </controlProperties>
     </control>
-    <control controlID="297" controlTypeID="com.balsamiq.mockups::ProgressBar" x="613" y="299" w="43" h="10" measuredW="100" measuredH="20" zOrder="82" locked="false" isInGroup="-1">
+    <control controlID="297" controlTypeID="com.balsamiq.mockups::ProgressBar" x="613" y="299" w="43" h="10" measuredW="100" measuredH="20" zOrder="76" locked="false" isInGroup="-1">
       <controlProperties>
         <indeterminate>false</indeterminate>
         <scrollBarValue>43</scrollBarValue>
       </controlProperties>
     </control>
-    <control controlID="298" controlTypeID="com.balsamiq.mockups::Canvas" x="537" y="190" w="65" h="63" measuredW="100" measuredH="70" zOrder="83" locked="false" isInGroup="-1">
+    <control controlID="298" controlTypeID="com.balsamiq.mockups::Canvas" x="537" y="190" w="65" h="63" measuredW="100" measuredH="70" zOrder="77" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <borderStyle>roundedSolid</borderStyle>
         <color>16777215</color>
       </controlProperties>
     </control>
-    <control controlID="299" controlTypeID="com.balsamiq.mockups::Label" x="554" y="194" w="28" h="-1" measuredW="27" measuredH="21" zOrder="84" locked="false" isInGroup="-1">
+    <control controlID="299" controlTypeID="com.balsamiq.mockups::Label" x="554" y="194" w="28" h="-1" measuredW="27" measuredH="21" zOrder="78" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Test</text>
       </controlProperties>
     </control>
-    <control controlID="300" controlTypeID="com.balsamiq.mockups::Label" x="552" y="211" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="85" locked="false" isInGroup="-1">
+    <control controlID="300" controlTypeID="com.balsamiq.mockups::Label" x="552" y="211" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="79" locked="false" isInGroup="-1">
       <controlProperties>
         <text>10x10</text>
       </controlProperties>
     </control>
-    <control controlID="301" controlTypeID="com.balsamiq.mockups::ProgressBar" x="548" y="232" w="43" h="10" measuredW="100" measuredH="20" zOrder="86" locked="false" isInGroup="-1">
+    <control controlID="301" controlTypeID="com.balsamiq.mockups::ProgressBar" x="548" y="232" w="43" h="10" measuredW="100" measuredH="20" zOrder="80" locked="false" isInGroup="-1">
       <controlProperties>
         <indeterminate>false</indeterminate>
         <scrollBarValue>43</scrollBarValue>
       </controlProperties>
     </control>
-    <control controlID="302" controlTypeID="com.balsamiq.mockups::Canvas" x="602" y="190" w="65" h="63" measuredW="100" measuredH="70" zOrder="87" locked="false" isInGroup="-1">
+    <control controlID="302" controlTypeID="com.balsamiq.mockups::Canvas" x="602" y="190" w="65" h="63" measuredW="100" measuredH="70" zOrder="81" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <borderStyle>roundedSolid</borderStyle>
         <color>16777215</color>
       </controlProperties>
     </control>
-    <control controlID="303" controlTypeID="com.balsamiq.mockups::Label" x="619" y="194" w="28" h="-1" measuredW="27" measuredH="21" zOrder="88" locked="false" isInGroup="-1">
+    <control controlID="303" controlTypeID="com.balsamiq.mockups::Label" x="619" y="194" w="28" h="-1" measuredW="27" measuredH="21" zOrder="82" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Test</text>
       </controlProperties>
     </control>
-    <control controlID="304" controlTypeID="com.balsamiq.mockups::Label" x="617" y="211" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="89" locked="false" isInGroup="-1">
+    <control controlID="304" controlTypeID="com.balsamiq.mockups::Label" x="617" y="211" w="-1" h="-1" measuredW="33" measuredH="21" zOrder="83" locked="false" isInGroup="-1">
       <controlProperties>
         <text>10x10</text>
       </controlProperties>
     </control>
-    <control controlID="305" controlTypeID="com.balsamiq.mockups::ProgressBar" x="613" y="232" w="43" h="10" measuredW="100" measuredH="20" zOrder="90" locked="false" isInGroup="-1">
+    <control controlID="305" controlTypeID="com.balsamiq.mockups::ProgressBar" x="613" y="232" w="43" h="10" measuredW="100" measuredH="20" zOrder="84" locked="false" isInGroup="-1">
       <controlProperties>
         <indeterminate>false</indeterminate>
         <scrollBarValue>43</scrollBarValue>
       </controlProperties>
     </control>
-    <control controlID="306" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="672" y="350" w="-1" h="133" measuredW="16" measuredH="100" zOrder="91" locked="false" isInGroup="-1"/>
+    <control controlID="306" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="672" y="350" w="-1" h="133" measuredW="16" measuredH="100" zOrder="85" locked="false" isInGroup="-1"/>
+    <control controlID="309" controlTypeID="com.balsamiq.mockups::Icon" x="554" y="371" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="86" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>SpinningIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>
