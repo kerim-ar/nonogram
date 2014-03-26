@@ -1,10 +1,31 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.0
+import QtQuick.Dialogs 1.1
 
 ApplicationWindow {
     visible: true
     width: 800
     height: 640
+
+    /* ------------------------------------------ */
+
+    MessageDialog {
+        id: emptyFieldsMessage
+        title: qsTr("Error")
+        text: qsTr("Please fill all fields")
+        icon: StandardIcon.Warning
+        visible: false
+    }
+
+    FileDialog {
+        id: fileDialog
+        title: qsTr("Please choose a file")
+        nameFilters: [ "Text files (*.txt)", "All files (*)" ]
+        visible: false
+        //TODO
+    }
+
+    /* ------------------------------------------ */
 
     menuBar: MenuBar {
         Menu {
@@ -20,14 +41,17 @@ ApplicationWindow {
             }
             MenuItem {
                 text: qsTr("Save crossword")
+                enabled: false
                 //TODO: onTriggered:
             }
             MenuItem {
                 text: qsTr("Change working directory")
+                enabled: false
                 //TODO: onTriggered:
             }
             MenuItem {
                 text: qsTr("Close crossword")
+                enabled: false
                 //TODO: onTriggered:
             }
         }
@@ -36,26 +60,13 @@ ApplicationWindow {
             title: qsTr("Publish")
             MenuItem {
                 text: qsTr("Publish to cloud")
+                enabled: false
                 //TODO: onTriggered:
             }
-        }
-
-        Menu {
-            id: test
-            title: qsTr("test")
             MenuItem {
-                text: qsTr("Start Window")
-                onTriggered: {
-                    startWindow.visible = true;
-                    nonogramCreatorMaster.visible = false;
-                }
-            }
-            MenuItem {
-                text: qsTr("Crossword Creator Maaster")
-                onTriggered: {
-                    startWindow.visible = false;
-                    nonogramCreatorMaster.visible = true;
-                }
+                text: qsTr("Options")
+                enabled: false
+                //TODO: onTriggered:
             }
         }
     }
@@ -71,27 +82,35 @@ ApplicationWindow {
         Label {
             x: 65
             y: 46
-            text: qsTr("New nonogram")
+            text: "<a href=\"#\">" + qsTr("New nonogram") + "</a>"
+            font.pixelSize: 16
+            verticalAlignment: Text.AlignTop
             style: Text.Normal
-            font.underline: true
-            font.pointSize: 13
+            font.underline: false
+            onLinkActivated: {
+                startWindow.visible = false
+                nonogramCreatorMaster.visible = true
+            }
         }
 
         Label {
             x: 65
             y: 98
-            text: qsTr("Open nonogram")
+            text: "<a href=\"#\">" + qsTr("Open nonogram") + "</a>"
+            font.pixelSize: 16
             style: Text.Normal
             font.underline: true
-            font.pointSize: 13
+            onLinkActivated: {
+                fileDialog.visible = true
+            }
         }
 
         Label {
             x: 321
             y: 46
             text: qsTr("Recently used")
+            font.pixelSize: 16
             style: Text.Normal
-            font.pointSize: 13
         }
 
         Rectangle {
@@ -109,6 +128,7 @@ ApplicationWindow {
         id: nonogramCreatorMaster
         width: 600
         height: 440
+        radius: 2
         visible: false
         x: (parent.width - nonogramCreatorMaster.width) / 2
         y: (parent.height - nonogramCreatorMaster.height) / 2
@@ -119,30 +139,31 @@ ApplicationWindow {
             y: 89
             width: 423
             height: 36
-            font.pointSize: 13
+            font.pixelSize: 16
             placeholderText: qsTr("Nonogram Title")
+            validator: RegExpValidator {regExp: /\w{,40}/}
         }
 
         Label {
             x: 55
-            y: 167
+            y: 168
             text: qsTr("Horizontal")
-            font.pointSize: 13
+            font.pixelSize: 16
         }
 
         Label {
             x: 55
-            y: 96
+            y: 98
             text: qsTr("Title")
-            font.pointSize: 13
+            font.pixelSize: 16
         }
 
         Label {
-            x: 186
-            y: 27
+            x: 157
+            y: 30
             text: qsTr("Nonogram creator master")
+            font.pixelSize: 22
             font.bold: true
-            font.pointSize: 15
         }
 
         TextField {
@@ -151,47 +172,50 @@ ApplicationWindow {
             y: 160
             width: 95
             height: 36
-            font.pointSize: 13
+            font.pixelSize: 16
             placeholderText: qsTr("")
+            validator: IntValidator {bottom: 1; top: 32}
         }
 
         Label {
             x: 240
-            y: 167
+            y: 168
             text: qsTr("cells")
-            font.pointSize: 13
+            font.pixelSize: 16
         }
 
         Label {
             id: verticalLabel
-            x: 346
-            y: 167
+            x: 350
+            y: 168
             text: qsTr("Vertical")
-            font.pointSize: 13
+            font.pixelSize: 16
         }
 
         TextField {
             id: vertical
             x: 407
-            y: 159
+            y: 160
             width: 95
             height: 36
-            font.pointSize: 13
+            font.pixelSize: 16
             placeholderText: qsTr("")
+            validator: IntValidator {bottom: 1; top: 32}
         }
 
         Label {
-            x: 508
-            y: 166
+            x: 511
+            y: 168
             text: qsTr("cells")
-            font.pointSize: 13
+            font.pixelSize: 16
         }
 
         Label {
+            id: label1
             x: 55
-            y: 240
+            y: 239
             text: qsTr("Comment")
-            font.pointSize: 13
+            font.pixelSize: 16
         }
 
         TextArea {
@@ -200,369 +224,39 @@ ApplicationWindow {
             y: 239
             width: 409
             height: 101
+            anchors.right: title.right
+            anchors.top: label1.top
+            font.pixelSize: 14
             readOnly: false
             highlightOnFocus: true
-            font.pointSize: 13
+        }
+
+        Button {
+            id: createNonogramBtn
+            x: 439
+            y: 386
+            width: 102
+            height: 25
+            text: qsTr("Create nonogram")
+            enabled: true
+            onClicked: {
+                if (title.text.length == 0 || vertical.text.length == 0 || horizontal.text.length == 0) {
+                    emptyFieldsMessage.visible = true;
+                } else {
+                    nonogramCreatorMaster.visible = false
+                    nonogramView.visible = true
+                    //TODO: clear text fields
+                }
+            }
         }
     }
 
     Rectangle {
-        id: crosswordView
+        id: nonogramView
         x: 0
-        y: 0
+        y: 1
         width: parent.width
         height: parent.height
         visible: false
-
-        Rectangle {
-            id: rectangle2
-            x: 150
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle3
-            x: 190
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle4
-            x: 230
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle5
-            x: 270
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle6
-            x: 310
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle7
-            x: 350
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle8
-            x: 390
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle9
-            x: 430
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle10
-            x: 470
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle11
-            x: 510
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle12
-            x: 550
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle13
-            x: 590
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle14
-            x: 630
-            y: 150
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle15
-            x: 150
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle16
-            x: 190
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle17
-            x: 230
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle18
-            x: 270
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle19
-            x: 310
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle20
-            x: 350
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle21
-            x: 390
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle22
-            x: 430
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle23
-            x: 470
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle24
-            x: 510
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle25
-            x: 550
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle26
-            x: 590
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle27
-            x: 630
-            y: 191
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle28
-            x: 150
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle29
-            x: 190
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle30
-            x: 230
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle31
-            x: 270
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle32
-            x: 310
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle33
-            x: 350
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle34
-            x: 390
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle35
-            x: 430
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle36
-            x: 470
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle37
-            x: 510
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle38
-            x: 550
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle39
-            x: 590
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
-
-        Rectangle {
-            id: rectangle40
-            x: 630
-            y: 230
-            width: 40
-            height: 40
-            color: "#e0dcdc"
-        }
     }
 }
