@@ -15,4 +15,9 @@ QML_IMPORT_PATH =
 
 HEADERS += NonogramModel.h
 
-OTHER_FILES += $$files(qml/*)
+OTHER_FILES += $$files(qml/*) \
+    qml/CustomMenuBar.qml \
+    qml/Launcher.qml \
+    qml/NonogramCreatorMaster.qml \
+    qml/Nonogram.qml \
+    qml/CustomMessageBox.qml

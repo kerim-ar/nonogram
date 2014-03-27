@@ -1,7 +1,7 @@
 #include "NonogramModel.h"
 
 NonogramModel::NonogramModel(QObject *parent)
-    : QAbstractTableModel(parent)
+    : QAbstractListModel(parent)
 {
 }
 
@@ -11,12 +11,7 @@ NonogramModel::~NonogramModel()
 
 int NonogramModel::rowCount(const QModelIndex &parent) const
 {
-    return m_matrix.size();
-}
-
-int NonogramModel::columnCount(const QModelIndex &parent) const
-{
-    return m_matrix[0].size();
+    return m_cells.size();
 }
 
 QVariant NonogramModel::data(const QModelIndex &index, int role) const
@@ -31,8 +26,10 @@ QString NonogramModel::title() const
 
 void NonogramModel::setTitle(const QString &title)
 {
-    if (m_title != title)
+    if (m_title != title) {
         m_title = title;
+        emit titleChanged();
+    }
 }
 
 QString NonogramModel::comment() const
@@ -42,6 +39,8 @@ QString NonogramModel::comment() const
 
 void NonogramModel::setComment(const QString &comment)
 {
-    if (m_comment != comment)
+    if (m_comment != comment) {
         m_comment = comment;
+        emit commentChanged();
+    }
 }

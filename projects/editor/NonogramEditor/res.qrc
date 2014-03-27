@@ -1,5 +1,10 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
+        <file>qml/CustomMenuBar.qml</file>
+        <file>qml/Launcher.qml</file>
+        <file>qml/NonogramCreatorMaster.qml</file>
+        <file>qml/Nonogram.qml</file>
+        <file>qml/CustomMessageBox.qml</file>
     </qresource>
 </RCC>

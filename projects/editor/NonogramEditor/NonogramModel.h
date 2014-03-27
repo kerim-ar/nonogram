@@ -3,20 +3,19 @@
 
 #include <QString>
 #include <QVector>
-#include <QAbstractTableModel>
+#include <QAbstractListModel>
 
-class NonogramModel : public QAbstractTableModel
+class NonogramModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QString title READ title WRITE setTitle)
-    Q_PROPERTY(QString comment READ comment WRITE setComment)
+    Q_PROPERTY(QString title READ title WRITE setTitle NOTIFY titleChanged)
+    Q_PROPERTY(QString comment READ comment WRITE setComment NOTIFY commentChanged)
 
 public:
     explicit NonogramModel(QObject *parent = 0);
     ~NonogramModel();
 
     int rowCount(const QModelIndex &parent) const;
-    int columnCount(const QModelIndex &parent) const;
     QVariant data(const QModelIndex &index, int role) const;
 
     QString title() const;
@@ -25,10 +24,14 @@ public:
     QString comment() const;
     void setComment(const QString &comment);
 
+signals:
+    void titleChanged();
+    void commentChanged();
+
 private:
     QString m_title;
     QString m_comment;
-    QVector< QVector<int> > m_matrix;
+    QVector<int> m_cells;
 };
 
 #endif // NONOGRAMMODEL_H
