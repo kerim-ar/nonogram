@@ -4,7 +4,8 @@
         <file>qml/CustomMenuBar.qml</file>
         <file>qml/Launcher.qml</file>
         <file>qml/NonogramCreatorMaster.qml</file>
-        <file>qml/Nonogram.qml</file>
+        <file>qml/NonogramView.qml</file>
         <file>qml/CustomMessageBox.qml</file>
+        <file>qml/CustomButton.qml</file>
     </qresource>
 </RCC>

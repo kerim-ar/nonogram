@@ -4,129 +4,116 @@ import QtQuick.Controls 1.1
 Rectangle {
     id: nonogramCreatorMaster
 
-    signal createNonogram()
+    signal createNonogram(int horizontalCellsCount, int verticalCellsCount)
 
-    width: 600
-    height: 440
-    radius: 2
+    anchors.fill: parent
 
     CustomMessageBox {
         id: messageBox
     }
 
     TextField {
-        id: title
-        x: 118
-        y: 89
-        width: 423
-        height: 36
-        font.pixelSize: 16
-        placeholderText: qsTr("Nonogram Title")
+        id: name
+        y: 10
+        width: 380
+        height: 25
+        font.pixelSize: 12
+        focus: true
+        anchors.horizontalCenter: parent.horizontalCenter;
+        placeholderText: qsTr("Nonogram name")
         validator: RegExpValidator {regExp: /\w{,40}/}
     }
 
     Label {
-        x: 55
-        y: 168
-        text: qsTr("Horizontal")
-        font.pixelSize: 16
-    }
-
-    Label {
-        x: 55
-        y: 98
-        text: qsTr("Title")
-        font.pixelSize: 16
-    }
-
-    Label {
-        x: 157
-        y: 30
-        text: qsTr("Nonogram creator master")
-        font.pixelSize: 22
-        font.bold: true
+        text: qsTr("Name:")
+        font.pixelSize: 12
+        anchors.right: name.left
+        anchors.rightMargin: 10
+        anchors.verticalCenter: name.verticalCenter
     }
 
     TextField {
-        id: horizontal
-        x: 139
-        y: 160
-        width: 95
-        height: 36
-        font.pixelSize: 16
-        placeholderText: qsTr("")
+        id: width
+        x: name.x
+        width: 100
+        height: 25
+        font.pixelSize: 12
+        anchors.top: name.bottom
+        anchors.topMargin: 5
         validator: IntValidator {bottom: 1; top: 32}
     }
 
     Label {
-        x: 240
-        y: 168
-        text: qsTr("cells")
-        font.pixelSize: 16
-    }
-
-    Label {
-        id: verticalLabel
-        x: 350
-        y: 168
-        text: qsTr("Vertical")
-        font.pixelSize: 16
+        text: qsTr("Width:")
+        font.pixelSize: 12
+        anchors.right: width.left
+        anchors.rightMargin: 10
+        anchors.verticalCenter: width.verticalCenter
     }
 
     TextField {
-        id: vertical
-        x: 407
-        y: 160
-        width: 95
-        height: 36
-        font.pixelSize: 16
-        placeholderText: qsTr("")
+        id: height
+        x: width.x + width.width + 80
+        width: 100
+        height: 25
+        font.pixelSize: 12
+        anchors.top: name.bottom
+        anchors.topMargin: 5
         validator: IntValidator {bottom: 1; top: 32}
     }
 
     Label {
-        x: 511
-        y: 168
-        text: qsTr("cells")
-        font.pixelSize: 16
-    }
-
-    Label {
-        id: label1
-        x: 55
-        y: 239
-        text: qsTr("Comment")
-        font.pixelSize: 16
+        text: qsTr("Height:")
+        font.pixelSize: 12
+        anchors.right: height.left
+        anchors.rightMargin: 10
+        anchors.verticalCenter: height.verticalCenter
     }
 
     TextArea {
         id: comment
-        x: 132
-        y: 239
-        width: 409
-        height: 101
-        anchors.right: title.right
-        anchors.top: label1.top
-        font.pixelSize: 14
+        x: width.x
+        width: 380
+        height: 100
+        anchors.top: width.bottom
+        anchors.topMargin: 5
+        font.pixelSize: 12
         readOnly: false
         highlightOnFocus: true
     }
 
-    Button {
-        id: createNonogramBtn
-        x: 439
-        y: 386
-        width: 102
-        height: 25
-        text: qsTr("Create nonogram")
-        enabled: true
+    Label {
+        y: comment.y
+        text: qsTr("Comment:")
+        font.pixelSize: 12
+        anchors.right: comment.left
+        anchors.rightMargin: 10
+    }
+
+    CustomButton {
+        id: cancelButton
+        x: (parent.width / 2) - cancelButton.width - 21
+        text: qsTr("Cancel")
+        anchors.bottom: parent.bottom;
+        anchors.bottomMargin: 10
+    }
+
+    CustomButton {
+        id: createButton
+        x: (parent.width / 2) + 21
+        text: qsTr("Create")
+        gradientBoundaryColor: "#BADCB0"
+        gradientCentralColor: "#A8D191"
+        anchors.bottom: parent.bottom;
+        anchors.bottomMargin: 10
+
         onClicked: {
-            if (title.text.length == 0 || vertical.text.length == 0 || horizontal.text.length == 0) {
+            if (name.text.length == 0 || width.text.length == 0 || height.text.length == 0) {
                 messageBox.messageTitle = qsTr("Error")
                 messageBox.messageText = qsTr("Please fill all fields")
                 messageBox.show()
             } else {
-                createNonogram()
+                createNonogram(width.text, height.text)
             }
         }
     }
