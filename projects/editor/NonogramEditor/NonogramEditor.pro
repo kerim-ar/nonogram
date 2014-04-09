@@ -28,4 +28,5 @@ OTHER_FILES += $$files(qml/*) \
     qml/CustomMessageBox.qml \
     qml/CustomButton.qml \
     qml/CustomTextField.qml \
-    qml/NonogramView.qml
+    qml/NonogramView.qml \
+    qml/Cell.qml

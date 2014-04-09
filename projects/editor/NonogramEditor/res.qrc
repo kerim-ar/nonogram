@@ -7,5 +7,6 @@
         <file>qml/NonogramView.qml</file>
         <file>qml/CustomMessageBox.qml</file>
         <file>qml/CustomButton.qml</file>
+        <file>qml/Cell.qml</file>
     </qresource>
 </RCC>

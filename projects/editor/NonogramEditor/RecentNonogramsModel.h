@@ -1,8 +1,6 @@
 #ifndef RECENTNONOGRAMSMODEL_H
 #define RECENTNONOGRAMSMODEL_H
 
-#include <QObject>
-#include <QVector>
 #include <QAbstractListModel>
 #include <RecentNonogramData.h>
 

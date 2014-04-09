@@ -57,9 +57,10 @@ ApplicationWindow {
         y: (parent.height - nonogramCreatorMaster.height) / 2
 
         onCreateNonogram: {
+            nonogramEditor.title = title;
             nonogramCreatorMaster.visible = false
             nonogramView.visible = true
-            nonogramView.setSize(horizontalCellsCount, verticalCellsCount)
+            nonogramView.init(title, horizontalCellsCount, verticalCellsCount, comment)
         }
 
         onVisibleChanged: {

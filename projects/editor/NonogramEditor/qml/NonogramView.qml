@@ -1,49 +1,41 @@
 import QtQuick 2.0
+import QtQuick.Nonogram.NonogramModel 1.0
 
 Rectangle {
     id: nonogramView
 
-    function setSize(horizontalCellsCount, verticalCellsCount) {
-        view.width = horizontalCellsCount * 40;
-        view.height = (verticalCellsCount - 1) * 40;
+    function init(title, horizontalCellsCount, verticalCellsCount, comment) {
+        nonogramModel.init(title, horizontalCellsCount * verticalCellsCount, comment)
+
+        playingField.width = horizontalCellsCount * 40;
+        playingField.height = (verticalCellsCount - 1) * 40;
+    }
+
+    NonogramModel {
+        id: nonogramModel
+    }
+
+    Component {
+        id: playingFieldDelegate
+        Item {
+            width: playingField.cellWidth
+            height: playingField.cellHeight
+            MouseArea {
+                anchors.fill: parent
+                onClicked: nonogramModel.toggleCell(index)
+            }
+            Cell {
+                isBlack: isColored
+            }
+        }
     }
 
     GridView {
-        id: view
+        id: playingField
         anchors.centerIn: parent
-        cellHeight: 40
-        delegate: Item {
-            x: 5
-            height: 50
-            Column {
-                spacing: 5
-                Rectangle {
-                    width: 40
-                    height: 40
-                    color: colorCode
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
-            }
-        }
         cellWidth: 40
-        model: ListModel {
-            ListElement {
-                colorCode: "grey"
-            }
-
-            ListElement {
-                colorCode: "red"
-            }
-
-            ListElement {
-                colorCode: "blue"
-            }
-
-            ListElement {
-                colorCode: "green"
-            }
-        }
+        cellHeight: 40
+        model: nonogramModel
+        delegate: playingFieldDelegate
     }
-
-
 }

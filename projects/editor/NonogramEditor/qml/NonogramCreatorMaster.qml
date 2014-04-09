@@ -4,7 +4,7 @@ import QtQuick.Controls 1.1
 Rectangle {
     id: nonogramCreatorMaster
 
-    signal createNonogram(int horizontalCellsCount, int verticalCellsCount)
+    signal createNonogram(string title, int horizontalCellsCount, int verticalCellsCount, string comment)
 
     anchors.fill: parent
 
@@ -113,7 +113,7 @@ Rectangle {
                 messageBox.messageText = qsTr("Please fill all fields")
                 messageBox.show()
             } else {
-                createNonogram(width.text, height.text)
+                createNonogram(name.text, width.text, height.text, comment.text)
             }
         }
     }
