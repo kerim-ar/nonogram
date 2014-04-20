@@ -5,6 +5,7 @@ Rectangle {
     id: nonogramCreatorMaster
 
     signal createNonogram(string title, int horizontalCellsCount, int verticalCellsCount, string comment)
+    signal cancelButtonClick()
 
     anchors.fill: parent
 
@@ -32,7 +33,7 @@ Rectangle {
         anchors.verticalCenter: name.verticalCenter
     }
 
-    TextField {
+    SpinBox {
         id: width
         x: name.x
         width: 100
@@ -40,7 +41,8 @@ Rectangle {
         font.pixelSize: 12
         anchors.top: name.bottom
         anchors.topMargin: 5
-        validator: IntValidator {bottom: 1; top: 32}
+        minimumValue: 1
+        maximumValue: 32
     }
 
     Label {
@@ -51,7 +53,7 @@ Rectangle {
         anchors.verticalCenter: width.verticalCenter
     }
 
-    TextField {
+    SpinBox {
         id: height
         x: width.x + width.width + 80
         width: 100
@@ -59,7 +61,8 @@ Rectangle {
         font.pixelSize: 12
         anchors.top: name.bottom
         anchors.topMargin: 5
-        validator: IntValidator {bottom: 1; top: 32}
+        minimumValue: 1
+        maximumValue: 32
     }
 
     Label {
@@ -96,6 +99,8 @@ Rectangle {
         text: qsTr("Cancel")
         anchors.bottom: parent.bottom;
         anchors.bottomMargin: 10
+
+        onClicked: cancelButtonClick()
     }
 
     CustomButton {
@@ -108,12 +113,12 @@ Rectangle {
         anchors.bottomMargin: 10
 
         onClicked: {
-            if (name.text.length == 0 || width.text.length == 0 || height.text.length == 0) {
+            if (name.text.length == 0) {
                 messageBox.messageTitle = qsTr("Error")
                 messageBox.messageText = qsTr("Please fill all fields")
                 messageBox.show()
             } else {
-                createNonogram(name.text, width.text, height.text, comment.text)
+                createNonogram(name.text, width.value, height.value, comment.text)
             }
         }
     }

@@ -8,9 +8,14 @@ Rectangle {
     signal newNonogram()
     signal openNonogram()
     signal connectToCloud()
+    signal createNonogram(string filePath)
 
     color: "#ffffff"
     anchors.fill: parent;
+
+    function setRecentNonograms(recentNonograms) {
+        recentNonogramsModel.setRecentNonograms(recentNonograms);
+    }
 
     RecentNonogramsModel {
         id: recentNonogramsModel
@@ -83,15 +88,30 @@ Rectangle {
     Component {
         id: recentNonogramsDelegate
 
-        Item {
+        Rectangle {
             height: 30
-
-            MouseArea {
-            }
+            width: parent.width
 
             Text {
-                text: display
+                x: 5
+                text: fileName
                 font.pixelSize: 14
+                anchors.verticalCenter: parent.verticalCenter
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+
+                onEntered: {
+                    parent.color = "#cccccc"
+                }
+
+                onExited: {
+                    parent.color = "#ffffff"
+                }
+
+                onClicked: createNonogram(filePath)
             }
         }
     }
@@ -104,7 +124,6 @@ Rectangle {
         ListView {
             id: recentNonogramsListView
 
-            anchors.leftMargin: 5
             anchors.fill: parent
             model: recentNonogramsModel
             delegate: recentNonogramsDelegate

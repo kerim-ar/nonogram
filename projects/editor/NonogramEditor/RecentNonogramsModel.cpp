@@ -3,9 +3,6 @@
 RecentNonogramsModel::RecentNonogramsModel(QObject * parent)
     :QAbstractListModel(parent)
 {
-    for (unsigned i = 0; i < 7; ++i) {
-        m_recentNonograms.push_back( RecentNonogramData("D:/nonograms/Nonogram ", i) );
-    }
 }
 
 int RecentNonogramsModel::rowCount(const QModelIndex &parent) const
@@ -18,9 +15,25 @@ QVariant RecentNonogramsModel::data(const QModelIndex &index, int role) const
     if (index.row() < 0 || index.row() > m_recentNonograms.size()) {
         return QVariant();
     }
-    if (role == Qt::DisplayRole)
-    {
-        return QVariant(m_recentNonograms[index.row()].Path());
+    if (role == FileName) {
+        return QVariant(m_recentNonograms[index.row()]);
+    }
+    if (role == FilePath) {
+        return QVariant(m_recentNonograms[index.row()]);
     }
     return QVariant();
+}
+
+QHash<int, QByteArray> RecentNonogramsModel::roleNames() const
+{
+    QHash<int, QByteArray> ret;
+    ret[FilePath] = "filePath";
+    ret[FileName] = "fileName";
+    return ret;
+}
+
+void RecentNonogramsModel::setRecentNonograms(const QStringList &recentNonograms)
+{
+    m_recentNonograms = recentNonograms;
+    emit layoutChanged();
 }

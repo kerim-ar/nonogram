@@ -3,5 +3,7 @@
     "comment": "Nonogram comment",
     "cells": [
         0, 1, 0, 1, 1, 0
-    ]
+    ],
+    "width": 5,
+    "height": 5
 }

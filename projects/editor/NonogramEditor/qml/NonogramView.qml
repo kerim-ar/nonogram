@@ -4,11 +4,36 @@ import QtQuick.Nonogram.NonogramModel 1.0
 Rectangle {
     id: nonogramView
 
-    function init(title, horizontalCellsCount, verticalCellsCount, comment) {
-        nonogramModel.init(title, horizontalCellsCount * verticalCellsCount, comment)
+    /**
+     * @param {string} name
+     * @param {int} horizontalCellsCount
+     * @param {int} verticalCellsCount
+     * @param {string} comment
+     */
+    function init(name, horizontalCellsCount, verticalCellsCount, comment) {
+        nonogramModel.name = name;
+        nonogramModel.comment = comment;
+        nonogramModel.setSize(horizontalCellsCount, verticalCellsCount)
 
         playingField.width = horizontalCellsCount * 40;
         playingField.height = (verticalCellsCount - 1) * 40;
+    }
+
+    /**
+     * @param {QJsonObject} jsonObject
+     */
+    function initWithJsonObject(jsonObject) {
+        nonogramModel.initWithJsonObject(jsonObject);
+
+        playingField.width = nonogramModel.width() * 40;
+        playingField.height = (nonogramModel.height() - 1) * 40;
+    }
+
+    /**
+     * @return {QJsonObject}
+     */
+    function getModelJson() {
+        return nonogramModel.toJsonObject();
     }
 
     NonogramModel {

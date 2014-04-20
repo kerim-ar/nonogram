@@ -5,7 +5,6 @@ QT += qml quick widgets
 SOURCES += main.cpp \
     NonogramModel.cpp \
     RecentNonogramsModel.cpp \
-    RecentNonogramData.cpp \
     NonogramEditor.cpp
 
 RESOURCES += res.qrc
@@ -18,7 +17,6 @@ QML_IMPORT_PATH =
 
 HEADERS += NonogramModel.h \
     RecentNonogramsModel.h \
-    RecentNonogramData.h \
     NonogramEditor.h
 
 OTHER_FILES += $$files(qml/*) \

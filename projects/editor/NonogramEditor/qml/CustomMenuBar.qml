@@ -1,48 +1,62 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.1
+import QtQuick.Nonogram.NonogramEditor 1.0
 
 MenuBar {
+
+    id: menuBar
+
+    property int mode
+
+    signal newNonogram()
+    signal openNonogram()
+    signal saveNonogram()
+    signal changeWorkingDirectory()
+    signal closeNonogram()
+    signal publishToCloud()
+    signal options()
+
     Menu {
-        id: file
         title: qsTr("File")
 
         MenuItem {
-            text: qsTr("New crossword")
-            //TODO: onTriggered:
+            text: qsTr("New nonogram")
+            enabled: (mode == NonogramEditor.Launcher || mode == NonogramEditor.NonogramView)
+            onTriggered: newNonogram()
         }
         MenuItem {
-            text: qsTr("Open crossword")
-            //TODO: onTriggered:
+            text: qsTr("Open nonogram")
+            enabled: (mode == NonogramEditor.Launcher || mode == NonogramEditor.NonogramView)
+            onTriggered: openNonogram()
         }
         MenuItem {
-            text: qsTr("Save crossword")
-            enabled: false
-            //TODO: onTriggered:
+            text: qsTr("Save nonogram")
+            enabled: (mode == NonogramEditor.NonogramView)
+            onTriggered: saveNonogram()
         }
         MenuItem {
             text: qsTr("Change working directory")
-            enabled: false
-            //TODO: onTriggered:
+            enabled: (mode == NonogramEditor.NonogramView)
+            onTriggered: changeWorkingDirectory()
         }
         MenuItem {
-            text: qsTr("Close crossword")
-            enabled: false
-            //TODO: onTriggered:
+            text: qsTr("Close nonogram")
+            enabled: (mode == NonogramEditor.NonogramView)
+            onTriggered: closeNonogram()
         }
     }
     Menu {
-        id: publish
         title: qsTr("Publish")
 
         MenuItem {
             text: qsTr("Publish to cloud")
-            enabled: false
-            //TODO: onTriggered:
+            enabled: (mode == NonogramEditor.NonogramView)
+            onTriggered: publishToCloud()
         }
         MenuItem {
             text: qsTr("Options")
-            enabled: false
-            //TODO: onTriggered:
+            enabled: (mode == NonogramEditor.NonogramView)
+            onTriggered: options()
         }
     }
 }
