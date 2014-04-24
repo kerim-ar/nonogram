@@ -1,8 +1,12 @@
-import QtQuick 2.0
+import QtQuick 2.2
 import QtQuick.Nonogram.NonogramModel 1.0
 
 Rectangle {
     id: nonogramView
+
+    anchors.fill: parent
+
+    signal cellStateChanged()
 
     /**
      * @param {string} name
@@ -13,10 +17,8 @@ Rectangle {
     function init(name, horizontalCellsCount, verticalCellsCount, comment) {
         nonogramModel.name = name;
         nonogramModel.comment = comment;
-        nonogramModel.setSize(horizontalCellsCount, verticalCellsCount)
-
-        playingField.width = horizontalCellsCount * 40;
-        playingField.height = (verticalCellsCount - 1) * 40;
+        nonogramModel.setSize(horizontalCellsCount, verticalCellsCount);
+        nonogramView._initPlayingField();
     }
 
     /**
@@ -24,9 +26,7 @@ Rectangle {
      */
     function initWithJsonObject(jsonObject) {
         nonogramModel.initWithJsonObject(jsonObject);
-
-        playingField.width = nonogramModel.width() * 40;
-        playingField.height = (nonogramModel.height() - 1) * 40;
+        nonogramView._initPlayingField();
     }
 
     /**
@@ -36,8 +36,28 @@ Rectangle {
         return nonogramModel.toJsonObject();
     }
 
+    /**
+     * @private
+     */
+    function _initPlayingField() {
+        var tmp1 = Math.min(nonogramView.width / nonogramModel.width(), 40);
+        var tmp2 = Math.min(nonogramView.height / nonogramModel.height(), 40);
+        var min = Math.min(tmp1, tmp2);
+
+        playingField.cellWidth = min;
+        playingField.cellHeight = min;
+
+        playingField.width = nonogramModel.width() * playingField.cellWidth
+        playingField.height = (nonogramModel.height()) * playingField.cellHeight
+    }
+
+    onHeightChanged: nonogramView._initPlayingField();
+    onWidthChanged: nonogramView._initPlayingField();
+
     NonogramModel {
         id: nonogramModel
+
+        onLayoutChanged: nonogramView.cellStateChanged();
     }
 
     Component {
@@ -47,7 +67,7 @@ Rectangle {
             height: playingField.cellHeight
             MouseArea {
                 anchors.fill: parent
-                onClicked: nonogramModel.toggleCell(index)
+                onClicked: nonogramModel.toggleCell(index);
             }
             Cell {
                 isBlack: isColored
@@ -57,9 +77,9 @@ Rectangle {
 
     GridView {
         id: playingField
-        anchors.centerIn: parent
-        cellWidth: 40
-        cellHeight: 40
+
+        anchors.centerIn: parent;
+
         model: nonogramModel
         delegate: playingFieldDelegate
     }

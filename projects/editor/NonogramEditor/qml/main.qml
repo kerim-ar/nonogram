@@ -5,21 +5,23 @@ import QtQuick.Nonogram.NonogramEditor 1.0
 
 ApplicationWindow {
     id: nonogramEditor
-    property int mode;
+
+    property int mode
+    property bool savingRequired: false
 
     visible: true
     width: 800
     height: 400
 
     function initStartState() {
+        nonogramEditor.savingRequired = false;
         nonogramEditor.title = qsTr("Nonogram Editor");
         nonogramEditor.mode = NonogramEditor.Launcher;
         launcher.setRecentNonograms(nonogramEditorCpp.getFileList());
     }
 
     function onNewNonogram() {
-        launcher.visible = false;
-        nonogramCreatorMaster.visible = true;
+        nonogramEditor.mode = NonogramEditor.NonogramCreatorMaster;
     }
 
     function onOpenNonogram() {
@@ -28,11 +30,15 @@ ApplicationWindow {
 
     function onSaveNonogram() {
         nonogramEditorCpp.saveNonogram(nonogramView.getModelJson());
+        nonogramEditor.savingRequired = false;
     }
 
     function onCloseNonogram() {
-        // need to show message box
-        initStartState();
+        if (nonogramEditor.savingRequired) {
+            closeDialog.open();
+        } else {
+            initStartState();
+        }
     }
 
     /**
@@ -60,6 +66,7 @@ ApplicationWindow {
 
         case NonogramEditor.NonogramCreatorMaster :
             launcher.visible = false;
+            nonogramView.visible = false;
             nonogramCreatorMaster.visible = true;
             customMenuBar.mode = nonogramEditor.mode;
             break;
@@ -83,6 +90,25 @@ ApplicationWindow {
         title: qsTr("Please choose a file")
         nameFilters: [ "Nonogram files (*.non)", "All files (*)" ]
         onAccepted: nonogramEditor.onCreateNonogram(fileDialog.fileUrls);
+    }
+
+    MessageDialog {
+        id: closeDialog
+
+        modality: Qt.WindowModal
+        title: qsTr("Nonogram Editor")
+        text: qsTr("Save nonogram?")
+        icon: StandardIcon.Question
+        standardButtons: StandardButton.Yes | StandardButton.No | StandardButton.Cancel
+
+        onYes: {
+            onSaveNonogram();
+            initStartState();
+        }
+        onNo: {
+            initStartState();
+        }
+        onRejected: {}
     }
 
     /* ------------------------------------------ */
@@ -118,6 +144,8 @@ ApplicationWindow {
         onCreateNonogram: {
             nonogramEditor.title = title;
             nonogramView.init(title, horizontalCellsCount, verticalCellsCount, comment);
+
+            nonogramEditor.savingRequired = true;
             nonogramEditor.mode = NonogramEditor.NonogramView;
         }
 
@@ -132,9 +160,9 @@ ApplicationWindow {
 
     NonogramView {
         id: nonogramView
-
         visible: false;
-        width: parent.width
-        height: parent.height
+        onCellStateChanged: {
+            nonogramEditor.savingRequired = true;
+        }
     }
 }

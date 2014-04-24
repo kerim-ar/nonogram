@@ -83,6 +83,7 @@ void NonogramModel::setSize(int width, int height)
     m_width = width;
     m_height = height;
 
+    m_cells.clear();
     // 1 - painted cell; 0 - not painted cell
     for (int i = 0; i < m_width * m_height; ++i) {
         m_cells.push_back(0);

@@ -9,6 +9,14 @@ Rectangle {
 
     anchors.fill: parent
 
+    onVisibleChanged: {
+        if (nonogramCreatorMaster.visible) {
+            name.text = "";
+            width.value = 1;
+            height.value = 1;
+        }
+    }
+
     CustomMessageBox {
         id: messageBox
     }
