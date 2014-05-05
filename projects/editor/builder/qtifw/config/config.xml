@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Installer>
+    <Name>Nonogram Editor</Name>
+    <Version>1.0.0</Version>
+    <Title>Nonogram Editor</Title>
+    <Publisher>PSTU students team</Publisher>
+    <RunProgram></RunProgram>
+    <RunProgramDescription></RunProgramDescription>
+    <StartMenuDir>Nonogram Editor</StartMenuDir>
+    <UninstallerName>EditorUninstall</UninstallerName>
+    <AllowNonAsciiCharacters>true</AllowNonAsciiCharacters>
+    <AllowSpaceInPath>true</AllowSpaceInPath>
+    <TargetDir>@homeDir@/NonogramEditor</TargetDir>
+    <AdminTargetDir>@rootDir@/NonogramEditor</AdminTargetDir>
+</Installer>

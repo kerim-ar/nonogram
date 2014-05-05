@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Package>
+    <DisplayName>Nonogram Editor</DisplayName>
+    <Description>NonogramEditor application</Description>
+    <Description xml:lang="ru_RU">Приложение Nonogram Editor</Description>
+    <Version>1.0.0</Version>
+    <ReleaseDate>2014-05-30</ReleaseDate>
+    <Licenses>
+        <License name="License Agreement" file="license.txt" />
+    </Licenses>
+    <Default>true</Default>
+    <ForcedInstallation>true</ForcedInstallation>
+    <Script>installscript.qs</Script>
+</Package>

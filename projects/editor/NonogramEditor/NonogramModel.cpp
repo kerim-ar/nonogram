@@ -13,6 +13,7 @@ NonogramModel::~NonogramModel()
 
 int NonogramModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent); // or (void)parent;
     return m_cells.size();
 }
 

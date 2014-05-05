@@ -7,6 +7,7 @@ RecentNonogramsModel::RecentNonogramsModel(QObject * parent)
 
 int RecentNonogramsModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent); // or (void)parent;
     return m_recentNonograms.size();
 }
 
