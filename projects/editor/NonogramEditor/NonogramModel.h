@@ -36,6 +36,9 @@ public:
     Q_INVOKABLE
     QJsonObject toJsonObject() const;
 
+    Q_INVOKABLE
+    bool isCorrectNonogram() const;
+
 public slots:
     void setSize(int width, int height);
     void initWithJsonObject(const QJsonObject &jsonObject);

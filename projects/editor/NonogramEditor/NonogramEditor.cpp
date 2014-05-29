@@ -1,12 +1,17 @@
 #include "NonogramEditor.h"
 
+#include <QUrl>
 #include <QDir>
 #include <QFile>
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QStandardPaths>
+#include <QTextStream>
+#include <QDesktopServices>
 
 const QString NonogramEditor::FILE_EXTENSION = ".non";
 const QString NonogramEditor::NONOGRAMS_FOLDER = "Nonograms";
+const QString NonogramEditor::PUBLISHED_FILE_EXTENTION = ".nonogram.txt";
 
 NonogramEditor::NonogramEditor(QObject *parent) :
     QObject(parent)
@@ -40,6 +45,24 @@ QJsonObject NonogramEditor::getJsonObject(const QString &filePath)
     return doc.object();
 }
 
+void NonogramEditor::saveInTextFile(const QJsonObject &nonogramJson)
+{
+    QString name = nonogramJson["name"].toString() + PUBLISHED_FILE_EXTENTION;
+    QFile file(m_workingDirectory.absolutePath() + "/" + name);
+    if (!file.open(QIODevice::WriteOnly)) {
+        return;
+    }
+    QTextStream out(&file);
+    out.setCodec("UTF-8");
+    out << nonogramJson["name"].toString();
+    out << "#" << nonogramJson["width"].toInt();
+    out << "#" << nonogramJson["height"].toInt();
+    out << "#" << arrayToString(nonogramJson["cells"].toArray());
+    file.close();
+
+    QDesktopServices::openUrl(QUrl("file:///" + m_workingDirectory.absolutePath()));
+}
+
 void NonogramEditor::saveNonogram(const QJsonObject &nonogramJson)
 {
     QString name = nonogramJson["name"].toString() + FILE_EXTENSION;
@@ -52,4 +75,17 @@ void NonogramEditor::saveNonogram(const QJsonObject &nonogramJson)
     QJsonDocument doc(nonogramJson);
     saveFile.write(doc.toJson());
     saveFile.close();
+}
+
+QString NonogramEditor::arrayToString(const QJsonArray &cells)
+{
+    QString res;
+    int size = cells.size();
+    for (int i = 0; i < size; ++i) {
+        res += QString::number(cells[i].toInt());
+        if (i != size - 1) {
+            res += " ";
+        }
+    }
+    return res;
 }

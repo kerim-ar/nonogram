@@ -1,7 +1,5 @@
 #include "NonogramModel.h"
 
-#include <iostream>
-
 NonogramModel::NonogramModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -77,6 +75,36 @@ QJsonObject NonogramModel::toJsonObject() const
     json.insert("height", m_height);
     json.insert("cells", QJsonValue(cellsToJsonArray()));
     return json;
+}
+
+bool NonogramModel::isCorrectNonogram() const
+{
+    bool correct;
+    for (int i = 0; i < m_height; ++i) {
+        correct = false;
+        for (int j = 0; j < m_width; ++j) {
+            if (m_cells[i * m_width + j] == 1) {
+                correct = true;
+                break;
+            }
+        }
+        if (!correct) {
+            return false;
+        }
+    }
+
+    for (int j = 0; j < m_width; ++j) {
+        correct = false;
+        for (int i = 0; i < m_height; ++i) {
+            if (m_cells[m_width * i + j] == 1) {
+                correct = true;
+            }
+        }
+        if (!correct) {
+            return false;
+        }
+    }
+    return true;
 }
 
 void NonogramModel::setSize(int width, int height)

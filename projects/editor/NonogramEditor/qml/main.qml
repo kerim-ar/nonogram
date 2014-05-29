@@ -21,11 +21,37 @@ ApplicationWindow {
     }
 
     function onNewNonogram() {
-        nonogramEditor.mode = NonogramEditor.NonogramCreatorMaster;
+        if (nonogramEditor.savingRequired) {
+            closeDialog.onYesFunction = function() {
+                nonogramEditor.onSaveNonogram();
+                nonogramEditor.mode = NonogramEditor.NonogramCreatorMaster;
+            }
+
+            closeDialog.onNoFunction = function() {
+                nonogramEditor.mode = NonogramEditor.NonogramCreatorMaster;
+            }
+
+            closeDialog.open();
+        } else {
+            nonogramEditor.mode = NonogramEditor.NonogramCreatorMaster;
+        }
     }
 
     function onOpenNonogram() {
-        fileDialog.open();
+        if (nonogramEditor.savingRequired) {
+            closeDialog.onYesFunction = function() {
+                nonogramEditor.onSaveNonogram();
+                fileDialog.open();
+            }
+
+            closeDialog.onNoFunction = function() {
+                fileDialog.open();
+            }
+
+            closeDialog.open();
+        } else {
+            fileDialog.open();
+        }
     }
 
     function onSaveNonogram() {
@@ -33,8 +59,30 @@ ApplicationWindow {
         nonogramEditor.savingRequired = false;
     }
 
+    /*function onChangeWorkingDirectory() {
+        selectFolderDialog.open();
+    }*/
+
+    function onPublish() {
+        if (nonogramView.isCorrectNonogram()) {
+            nonogramEditorCpp.saveInTextFile(nonogramView.getModelJson());
+        } else {
+            incorrectNonogram.open();
+        }
+    }
+
     function onCloseNonogram() {
         if (nonogramEditor.savingRequired) {
+
+            closeDialog.onYesFunction = function() {
+                nonogramEditor.onSaveNonogram();
+                nonogramEditor.initStartState();
+            };
+
+            closeDialog.onNoFunction = function() {
+                nonogramEditor.initStartState();
+            };
+
             closeDialog.open();
         } else {
             initStartState();
@@ -72,6 +120,7 @@ ApplicationWindow {
             break;
 
         case NonogramEditor.NonogramView :
+            launcher.visible = false;
             nonogramCreatorMaster.visible = false;
             nonogramView.visible = true;
             customMenuBar.mode = nonogramEditor.mode;
@@ -92,8 +141,20 @@ ApplicationWindow {
         onAccepted: nonogramEditor.onCreateNonogram(fileDialog.fileUrls);
     }
 
+    FileDialog {
+        id: selectFolderDialog
+        title: qsTr("Select a folder")
+        selectFolder: true
+        onAccepted: {
+            console.log("folder: ", selectFolderDialog.folder);
+        }
+    }
+
     MessageDialog {
         id: closeDialog
+
+        property var onYesFunction;
+        property var onNoFunction;
 
         modality: Qt.WindowModal
         title: qsTr("Nonogram Editor")
@@ -102,13 +163,26 @@ ApplicationWindow {
         standardButtons: StandardButton.Yes | StandardButton.No | StandardButton.Cancel
 
         onYes: {
-            onSaveNonogram();
-            initStartState();
+            if (closeDialog.onYesFunction) {
+                closeDialog.onYesFunction();
+            }
         }
         onNo: {
-            initStartState();
+            if (closeDialog.onNoFunction) {
+                closeDialog.onNoFunction();
+            }
         }
         onRejected: {}
+    }
+
+    MessageDialog {
+        id: incorrectNonogram
+
+        modality: Qt.WindowModal
+        title: qsTr("Incorrect nonogram")
+        text: qsTr("Your nonogram shouldn't contain empty lines or columns")
+        icon: StandardIcon.Warning
+        standardButtons: StandardButton.Ok
     }
 
     /* ------------------------------------------ */
@@ -119,6 +193,8 @@ ApplicationWindow {
         onNewNonogram: nonogramEditor.onNewNonogram()
         onOpenNonogram: nonogramEditor.onOpenNonogram()
         onSaveNonogram: nonogramEditor.onSaveNonogram()
+        //onChangeWorkingDirectory: nonogramEditor.onChangeWorkingDirectory()
+        onPublish: nonogramEditor.onPublish()
         onCloseNonogram: nonogramEditor.onCloseNonogram()
     }
     menuBar: customMenuBar

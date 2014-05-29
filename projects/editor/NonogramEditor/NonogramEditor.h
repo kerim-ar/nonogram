@@ -10,7 +10,6 @@ class NonogramEditor : public QObject
 {
     Q_OBJECT
 public:
-    static const QString FILE_EXTENSION;
 
     Q_ENUMS(Mode)
     enum Mode {
@@ -27,13 +26,20 @@ public:
     Q_INVOKABLE
     QJsonObject getJsonObject(const QString &filePath);
 
+    Q_INVOKABLE
+    void saveInTextFile(const QJsonObject & nonogramJson);
+
 public slots:
     void saveNonogram(const QJsonObject & nonogramJson);
 
 signals:
 
 private:
+    QString arrayToString(const QJsonArray & cells);
+
+    static const QString FILE_EXTENSION;
     static const QString NONOGRAMS_FOLDER;
+    static const QString PUBLISHED_FILE_EXTENTION;
 
     QString m_fileName;
     QDir m_workingDirectory;

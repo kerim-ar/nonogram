@@ -51,6 +51,13 @@ Rectangle {
         playingField.height = (nonogramModel.height()) * playingField.cellHeight
     }
 
+    /**
+     * @return {Boolean}
+     */
+    function isCorrectNonogram() {
+        return nonogramModel.isCorrectNonogram();
+    }
+
     onHeightChanged: nonogramView._initPlayingField();
     onWidthChanged: nonogramView._initPlayingField();
 

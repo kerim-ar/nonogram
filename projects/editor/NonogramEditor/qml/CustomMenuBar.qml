@@ -11,10 +11,8 @@ MenuBar {
     signal newNonogram()
     signal openNonogram()
     signal saveNonogram()
-    signal changeWorkingDirectory()
+    signal publish()
     signal closeNonogram()
-    signal publishToCloud()
-    signal options()
 
     Menu {
         title: qsTr("File")
@@ -35,28 +33,14 @@ MenuBar {
             onTriggered: saveNonogram()
         }
         MenuItem {
-            text: qsTr("Change working directory")
+            text: qsTr("Publish")
             enabled: (mode == NonogramEditor.NonogramView)
-            onTriggered: changeWorkingDirectory()
+            onTriggered: publish()
         }
         MenuItem {
             text: qsTr("Close nonogram")
             enabled: (mode == NonogramEditor.NonogramView)
             onTriggered: closeNonogram()
-        }
-    }
-    Menu {
-        title: qsTr("Publish")
-
-        MenuItem {
-            text: qsTr("Publish to cloud")
-            enabled: (mode == NonogramEditor.NonogramView)
-            onTriggered: publishToCloud()
-        }
-        MenuItem {
-            text: qsTr("Options")
-            enabled: (mode == NonogramEditor.NonogramView)
-            onTriggered: options()
         }
     }
 }

@@ -69,22 +69,6 @@ Rectangle {
         }
     }
 
-    CustomButton {
-        id: connectToCloudButton
-
-        x: 41
-        y: 198
-        text: qsTr("Connect to Cloud")
-        anchors.top: openNonogramButton.bottom
-        anchors.topMargin: 20
-
-        Component.onCompleted: {
-            connectToCloudButton.clicked.connect(function() {
-                connectToCloud()
-            })
-        }
-    }
-
     Component {
         id: recentNonogramsDelegate
 
