@@ -120,6 +120,7 @@
 		E54578C719373244005700FE /* navigation-bar-top.png in Resources */ = {isa = PBXBuildFile; fileRef = E54578C619373244005700FE /* navigation-bar-top.png */; };
 		E54578C91937324B005700FE /* window-background.png in Resources */ = {isa = PBXBuildFile; fileRef = E54578C81937324B005700FE /* window-background.png */; };
 		E54578CB1937326E005700FE /* nonagram-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E54578CA1937326E005700FE /* nonagram-menu.png */; };
+		E54578ED1937B4BB005700FE /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = E54578EC1937B4BB005700FE /* load.png */; };
 		E5A6812C190EA9E200949E92 /* NNonagramManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A6812B190EA9E200949E92 /* NNonagramManager.m */; };
 		E5A9200D191E835A00745859 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5A9200C191E835A00745859 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -366,6 +367,7 @@
 		E54578C81937324B005700FE /* window-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "window-background.png"; path = "../../../../../../Downloads/window-background.png"; sourceTree = "<group>"; };
 		E54578CA1937326E005700FE /* nonagram-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nonagram-menu.png"; path = "../../../../../../Downloads/nonagram-menu.png"; sourceTree = "<group>"; };
 		E54578CD193732F4005700FE /* MagicalRecord.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MagicalRecord.xcodeproj; path = "../../../../../../Downloads/MagicalRecord-develop 2/MagicalRecord.xcodeproj"; sourceTree = "<group>"; };
+		E54578EC1937B4BB005700FE /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = load.png; path = ../../../../../../Downloads/load.png; sourceTree = "<group>"; };
 		E5A6812A190EA9E200949E92 /* NNonagramManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNonagramManager.h; sourceTree = "<group>"; };
 		E5A6812B190EA9E200949E92 /* NNonagramManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNonagramManager.m; sourceTree = "<group>"; };
 		E5A9200C191E835A00745859 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -767,6 +769,7 @@
 		E5A91FE2191648A800745859 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E54578EC1937B4BB005700FE /* load.png */,
 				E545772D1933CE02005700FE /* rules */,
 				E54578C21937322F005700FE /* btn-background.png */,
 				E54578C81937324B005700FE /* window-background.png */,
@@ -916,6 +919,7 @@
 				E54577201933BEFE005700FE /* instruments-bg.png in Resources */,
 				E54578C519373238005700FE /* rule-background.png in Resources */,
 				E545771C1933A743005700FE /* victory-background.png in Resources */,
+				E54578ED1937B4BB005700FE /* load.png in Resources */,
 				E545771F1933BEFE005700FE /* selected-btn.png in Resources */,
 				E54578C31937322F005700FE /* btn-background.png in Resources */,
 				E54577351933CE1A005700FE /* third.png in Resources */,
