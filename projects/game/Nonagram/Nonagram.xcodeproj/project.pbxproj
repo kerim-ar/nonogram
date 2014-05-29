@@ -71,7 +71,6 @@
 		C4439ED41935235C00F60280 /* GTMHTTPUploadFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C4439EC91935235C00F60280 /* GTMHTTPUploadFetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C4439ED51935235C00F60280 /* GTMMIMEDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C4439ECB1935235C00F60280 /* GTMMIMEDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C4439ED61935235C00F60280 /* GTMReadMonitorInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = C4439ECD1935235C00F60280 /* GTMReadMonitorInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C4A18EA51934E4D00063FD7C /* libMagicalRecord-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A18E9E1934E4B30063FD7C /* libMagicalRecord-iOS.a */; };
 		C4A18EE41934E5990063FD7C /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A18EAA1934E5990063FD7C /* MagicalImportFunctions.m */; };
 		C4A18EE51934E5990063FD7C /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A18EAC1934E5990063FD7C /* NSAttributeDescription+MagicalDataImport.m */; };
 		C4A18EE61934E5990063FD7C /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A18EAE1934E5990063FD7C /* NSEntityDescription+MagicalDataImport.m */; };
@@ -98,11 +97,6 @@
 		C4A18EFB1934E5990063FD7C /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A18EDB1934E5990063FD7C /* MagicalRecord+Setup.m */; };
 		C4A18EFC1934E5990063FD7C /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A18EDD1934E5990063FD7C /* MagicalRecord+ShorthandSupport.m */; };
 		C4A18EFD1934E5990063FD7C /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A18EDF1934E5990063FD7C /* MagicalRecord.m */; };
-		C4A18F001934E63F0063FD7C /* window-background.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A18EFE1934E63F0063FD7C /* window-background.png */; };
-		C4A18F011934E63F0063FD7C /* nonagram-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A18EFF1934E63F0063FD7C /* nonagram-menu.png */; };
-		C4A18F051934E69E0063FD7C /* rule-background.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A18F021934E69E0063FD7C /* rule-background.png */; };
-		C4A18F061934E69E0063FD7C /* btn-background.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A18F031934E69E0063FD7C /* btn-background.png */; };
-		C4A18F071934E69E0063FD7C /* navigation-bar-top.png in Resources */ = {isa = PBXBuildFile; fileRef = C4A18F041934E69E0063FD7C /* navigation-bar-top.png */; };
 		C4A18F091934E9130063FD7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A18F081934E9130063FD7C /* SystemConfiguration.framework */; };
 		C4A18F0B1934E92C0063FD7C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A18F0A1934E92C0063FD7C /* Security.framework */; };
 		E509CAC2190D0F6F001DE280 /* NNonagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E509CAC0190D0F6F001DE280 /* NNonagram.xcdatamodeld */; };
@@ -121,6 +115,11 @@
 		E54577371933CE1A005700FE /* fifth.png in Resources */ = {isa = PBXBuildFile; fileRef = E54577311933CE1A005700FE /* fifth.png */; };
 		E54577381933CE1A005700FE /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = E54577321933CE1A005700FE /* second.png */; };
 		E54577391933CE1A005700FE /* sixth.png in Resources */ = {isa = PBXBuildFile; fileRef = E54577331933CE1A005700FE /* sixth.png */; };
+		E54578C31937322F005700FE /* btn-background.png in Resources */ = {isa = PBXBuildFile; fileRef = E54578C21937322F005700FE /* btn-background.png */; };
+		E54578C519373238005700FE /* rule-background.png in Resources */ = {isa = PBXBuildFile; fileRef = E54578C419373238005700FE /* rule-background.png */; };
+		E54578C719373244005700FE /* navigation-bar-top.png in Resources */ = {isa = PBXBuildFile; fileRef = E54578C619373244005700FE /* navigation-bar-top.png */; };
+		E54578C91937324B005700FE /* window-background.png in Resources */ = {isa = PBXBuildFile; fileRef = E54578C81937324B005700FE /* window-background.png */; };
+		E54578CB1937326E005700FE /* nonagram-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E54578CA1937326E005700FE /* nonagram-menu.png */; };
 		E5A6812C190EA9E200949E92 /* NNonagramManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A6812B190EA9E200949E92 /* NNonagramManager.m */; };
 		E5A9200D191E835A00745859 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5A9200C191E835A00745859 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -133,30 +132,30 @@
 			remoteGlobalIDString = 3F73612218DB534900E2B14C;
 			remoteInfo = Nonagram;
 		};
-		C4A18E9D1934E4B30063FD7C /* PBXContainerItemProxy */ = {
+		E54578E4193732F7005700FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C4A18E951934E4B30063FD7C /* MagicalRecord.xcodeproj */;
+			containerPortal = E54578CD193732F4005700FE /* MagicalRecord.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C7CF97AB17498414008D9D13;
 			remoteInfo = "libMagicalRecord-iOS";
 		};
-		C4A18E9F1934E4B30063FD7C /* PBXContainerItemProxy */ = {
+		E54578E6193732F7005700FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C4A18E951934E4B30063FD7C /* MagicalRecord.xcodeproj */;
+			containerPortal = E54578CD193732F4005700FE /* MagicalRecord.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C7CF97BB1749843F008D9D13;
 			remoteInfo = "libMagicalRecord-OSX";
 		};
-		C4A18EA11934E4B30063FD7C /* PBXContainerItemProxy */ = {
+		E54578E8193732F7005700FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C4A18E951934E4B30063FD7C /* MagicalRecord.xcodeproj */;
+			containerPortal = E54578CD193732F4005700FE /* MagicalRecord.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C7CF97FF174984CA008D9D13;
 			remoteInfo = "MagicalRecordTests-iOS";
 		};
-		C4A18EA31934E4B30063FD7C /* PBXContainerItemProxy */ = {
+		E54578EA193732F7005700FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C4A18E951934E4B30063FD7C /* MagicalRecord.xcodeproj */;
+			containerPortal = E54578CD193732F4005700FE /* MagicalRecord.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C7CF9816174984E4008D9D13;
 			remoteInfo = "MagicalRecordTests-OSX";
@@ -284,7 +283,6 @@
 		C4439ECB1935235C00F60280 /* GTMMIMEDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMMIMEDocument.m; sourceTree = "<group>"; };
 		C4439ECC1935235C00F60280 /* GTMReadMonitorInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMReadMonitorInputStream.h; sourceTree = "<group>"; };
 		C4439ECD1935235C00F60280 /* GTMReadMonitorInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMReadMonitorInputStream.m; sourceTree = "<group>"; };
-		C4A18E951934E4B30063FD7C /* MagicalRecord.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MagicalRecord.xcodeproj; path = "../../../MagicalRecord-develop/MagicalRecord.xcodeproj"; sourceTree = "<group>"; };
 		C4A18EA91934E5990063FD7C /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
 		C4A18EAA1934E5990063FD7C /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
 		C4A18EAB1934E5990063FD7C /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
@@ -341,11 +339,6 @@
 		C4A18EE11934E5990063FD7C /* MagicalRecordLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordLogging.h; sourceTree = "<group>"; };
 		C4A18EE21934E5990063FD7C /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		C4A18EE31934E5990063FD7C /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
-		C4A18EFE1934E63F0063FD7C /* window-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "window-background.png"; path = "../../../window-background.png"; sourceTree = "<group>"; };
-		C4A18EFF1934E63F0063FD7C /* nonagram-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nonagram-menu.png"; path = "../../../nonagram-menu.png"; sourceTree = "<group>"; };
-		C4A18F021934E69E0063FD7C /* rule-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rule-background.png"; path = "../../../rule-background.png"; sourceTree = "<group>"; };
-		C4A18F031934E69E0063FD7C /* btn-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-background.png"; path = "../../../btn-background.png"; sourceTree = "<group>"; };
-		C4A18F041934E69E0063FD7C /* navigation-bar-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigation-bar-top.png"; path = "../../../navigation-bar-top.png"; sourceTree = "<group>"; };
 		C4A18F081934E9130063FD7C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C4A18F0A1934E92C0063FD7C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E509CAC1190D0F6F001DE280 /* NNonagram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NNonagram.xcdatamodel; sourceTree = "<group>"; };
@@ -367,6 +360,12 @@
 		E54577311933CE1A005700FE /* fifth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fifth.png; sourceTree = "<group>"; };
 		E54577321933CE1A005700FE /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		E54577331933CE1A005700FE /* sixth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sixth.png; sourceTree = "<group>"; };
+		E54578C21937322F005700FE /* btn-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn-background.png"; path = "../../../../../../Downloads/btn-background.png"; sourceTree = "<group>"; };
+		E54578C419373238005700FE /* rule-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rule-background.png"; path = "../../../../../../Downloads/rule-background.png"; sourceTree = "<group>"; };
+		E54578C619373244005700FE /* navigation-bar-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigation-bar-top.png"; path = "../../../../../../Downloads/navigation-bar-top.png"; sourceTree = "<group>"; };
+		E54578C81937324B005700FE /* window-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "window-background.png"; path = "../../../../../../Downloads/window-background.png"; sourceTree = "<group>"; };
+		E54578CA1937326E005700FE /* nonagram-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nonagram-menu.png"; path = "../../../../../../Downloads/nonagram-menu.png"; sourceTree = "<group>"; };
+		E54578CD193732F4005700FE /* MagicalRecord.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MagicalRecord.xcodeproj; path = "../../../../../../Downloads/MagicalRecord-develop 2/MagicalRecord.xcodeproj"; sourceTree = "<group>"; };
 		E5A6812A190EA9E200949E92 /* NNonagramManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNonagramManager.h; sourceTree = "<group>"; };
 		E5A6812B190EA9E200949E92 /* NNonagramManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNonagramManager.m; sourceTree = "<group>"; };
 		E5A9200C191E835A00745859 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -382,7 +381,6 @@
 				C4A18F091934E9130063FD7C /* SystemConfiguration.framework in Frameworks */,
 				C4A18F0B1934E92C0063FD7C /* Security.framework in Frameworks */,
 				3FA303C619053A150023AA75 /* CoreData.framework in Frameworks */,
-				C4A18EA51934E4D00063FD7C /* libMagicalRecord-iOS.a in Frameworks */,
 				3F73612918DB534A00E2B14C /* CoreGraphics.framework in Frameworks */,
 				3F73612B18DB534A00E2B14C /* UIKit.framework in Frameworks */,
 				3F73612718DB534A00E2B14C /* Foundation.framework in Frameworks */,
@@ -469,10 +467,10 @@
 		3F73612C18DB534A00E2B14C /* Nonagram */ = {
 			isa = PBXGroup;
 			children = (
+				E54578CD193732F4005700FE /* MagicalRecord.xcodeproj */,
 				C4439E3B19351DB700F60280 /* Google Drive */,
 				C4439E921935216500F60280 /* Client Library */,
 				C4A18EA61934E5990063FD7C /* MagicalRecord */,
-				C4A18E951934E4B30063FD7C /* MagicalRecord.xcodeproj */,
 				E5A91FDD1916489F00745859 /* Resources */,
 				E509CABB190D0F0B001DE280 /* Model */,
 				3F2D7D9E18E58ED7005DBA49 /* Controller */,
@@ -618,17 +616,6 @@
 			path = "Client Library";
 			sourceTree = "<group>";
 		};
-		C4A18E961934E4B30063FD7C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C4A18E9E1934E4B30063FD7C /* libMagicalRecord-iOS.a */,
-				C4A18EA01934E4B30063FD7C /* libMagicalRecord-OSX.dylib */,
-				C4A18EA21934E4B30063FD7C /* MagicalRecordTests-iOS.xctest */,
-				C4A18EA41934E4B30063FD7C /* MagicalRecordTests-OSX.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C4A18EA61934E5990063FD7C /* MagicalRecord */ = {
 			isa = PBXGroup;
 			children = (
@@ -757,6 +744,17 @@
 			name = rules;
 			sourceTree = "<group>";
 		};
+		E54578DE193732F7005700FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E54578E5193732F7005700FE /* libMagicalRecord-iOS.a */,
+				E54578E7193732F7005700FE /* libMagicalRecord-OSX.dylib */,
+				E54578E9193732F7005700FE /* MagicalRecordTests-iOS.xctest */,
+				E54578EB193732F7005700FE /* MagicalRecordTests-OSX.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		E5A91FDD1916489F00745859 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,13 +767,13 @@
 		E5A91FE2191648A800745859 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C4A18F021934E69E0063FD7C /* rule-background.png */,
-				C4A18F031934E69E0063FD7C /* btn-background.png */,
-				C4A18F041934E69E0063FD7C /* navigation-bar-top.png */,
-				C4A18EFE1934E63F0063FD7C /* window-background.png */,
-				C4A18EFF1934E63F0063FD7C /* nonagram-menu.png */,
 				E545772D1933CE02005700FE /* rules */,
+				E54578C21937322F005700FE /* btn-background.png */,
+				E54578C81937324B005700FE /* window-background.png */,
+				E54578C619373244005700FE /* navigation-bar-top.png */,
+				E54578C419373238005700FE /* rule-background.png */,
 				E54577231933C694005700FE /* instrument-full.png */,
+				E54578CA1937326E005700FE /* nonagram-menu.png */,
 				E545771D1933BEFE005700FE /* selected-btn.png */,
 				E545771E1933BEFE005700FE /* instruments-bg.png */,
 				E54577291933C908005700FE /* instrument-clear.png */,
@@ -851,8 +849,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C4A18E961934E4B30063FD7C /* Products */;
-					ProjectRef = C4A18E951934E4B30063FD7C /* MagicalRecord.xcodeproj */;
+					ProductGroup = E54578DE193732F7005700FE /* Products */;
+					ProjectRef = E54578CD193732F4005700FE /* MagicalRecord.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -864,32 +862,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C4A18E9E1934E4B30063FD7C /* libMagicalRecord-iOS.a */ = {
+		E54578E5193732F7005700FE /* libMagicalRecord-iOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libMagicalRecord-iOS.a";
-			remoteRef = C4A18E9D1934E4B30063FD7C /* PBXContainerItemProxy */;
+			remoteRef = E54578E4193732F7005700FE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C4A18EA01934E4B30063FD7C /* libMagicalRecord-OSX.dylib */ = {
+		E54578E7193732F7005700FE /* libMagicalRecord-OSX.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = "libMagicalRecord-OSX.dylib";
-			remoteRef = C4A18E9F1934E4B30063FD7C /* PBXContainerItemProxy */;
+			remoteRef = E54578E6193732F7005700FE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C4A18EA21934E4B30063FD7C /* MagicalRecordTests-iOS.xctest */ = {
+		E54578E9193732F7005700FE /* MagicalRecordTests-iOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "MagicalRecordTests-iOS.xctest";
-			remoteRef = C4A18EA11934E4B30063FD7C /* PBXContainerItemProxy */;
+			remoteRef = E54578E8193732F7005700FE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C4A18EA41934E4B30063FD7C /* MagicalRecordTests-OSX.xctest */ = {
+		E54578EB193732F7005700FE /* MagicalRecordTests-OSX.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "MagicalRecordTests-OSX.xctest";
-			remoteRef = C4A18EA31934E4B30063FD7C /* PBXContainerItemProxy */;
+			remoteRef = E54578EA193732F7005700FE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -903,23 +901,23 @@
 				E54577361933CE1A005700FE /* forth.png in Resources */,
 				E54577241933C694005700FE /* instrument-full.png in Resources */,
 				E54577341933CE1A005700FE /* first.png in Resources */,
-				C4A18F051934E69E0063FD7C /* rule-background.png in Resources */,
 				3F73613D18DB534A00E2B14C /* Main_iPad.storyboard in Resources */,
-				C4A18F011934E63F0063FD7C /* nonagram-menu.png in Resources */,
-				C4A18F001934E63F0063FD7C /* window-background.png in Resources */,
+				E54578C91937324B005700FE /* window-background.png in Resources */,
 				C41150DC1935B388006787CD /* GTMOAuth2ViewTouch.xib in Resources */,
 				E54577381933CE1A005700FE /* second.png in Resources */,
-				C4A18F071934E69E0063FD7C /* navigation-bar-top.png in Resources */,
 				E545772A1933C908005700FE /* instrument-clear.png in Resources */,
-				C4A18F061934E69E0063FD7C /* btn-background.png in Resources */,
+				E54578CB1937326E005700FE /* nonagram-menu.png in Resources */,
+				E54578C719373244005700FE /* navigation-bar-top.png in Resources */,
 				3F73614218DB534A00E2B14C /* Images.xcassets in Resources */,
 				3F73613A18DB534A00E2B14C /* Main_iPhone.storyboard in Resources */,
 				E54577391933CE1A005700FE /* sixth.png in Resources */,
 				E54577371933CE1A005700FE /* fifth.png in Resources */,
 				E545772C1933C918005700FE /* instrument-cross.png in Resources */,
 				E54577201933BEFE005700FE /* instruments-bg.png in Resources */,
+				E54578C519373238005700FE /* rule-background.png in Resources */,
 				E545771C1933A743005700FE /* victory-background.png in Resources */,
 				E545771F1933BEFE005700FE /* selected-btn.png in Resources */,
+				E54578C31937322F005700FE /* btn-background.png in Resources */,
 				E54577351933CE1A005700FE /* third.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

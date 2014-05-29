@@ -96,19 +96,28 @@
 
 -(NSArray *) getNonagrams
 {
-    return self.fields;
+    return [NNonagramField MR_findAllSortedBy:@"width" ascending:YES];
 }
 
--(void) saveNonogramWith:(NSString *)title and:(NSString *)width and:(NSString *)height and:(NSString *) cells {
-    NNonagramField *field = [NNonagramField MR_createEntity];
-    
-    field.title = title;
-    field.width = width;
-    field.height = height;
-    field.field = cells;
-    //TODO:
-    
-    [[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
+-(void) saveNonogramWith:(NSString *)title and:(NSString *)width and:(NSString *)height and:(NSString *)cells and:(NSString *) userField and:(NSString *) topMetric and:(NSString *) leftMetric and:(NSString *) topMetricWidth and:(NSString *) leftMetricWidth{
+    NSArray *fields = [NNonagramField MR_findByAttribute:@"field" withValue:cells];
+    if ([fields count] == 0)
+    {
+        NNonagramField *field = [NNonagramField MR_createEntity];
+        
+        field.title = title;
+        field.width = width;
+        field.height = height;
+        field.field = cells;
+        field.user_field = userField;
+        field.top_metric = topMetric;
+        field.left_metric = leftMetric;
+        field.top_metric_width = topMetricWidth;
+        field.left_metric_width = leftMetricWidth;
+        field.progress = @"0";
+        
+        [[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
+    }
 }
 
 @end

@@ -94,6 +94,8 @@ NSInteger const maximumZoomScale = 5.0;
     [self checkAndLightUncorrectCels:self.collectionViewNonagram];
 }
 
+
+
 -(void)checkAndLightUncorrectCels:(UICollectionView *)collectionView
 {
     for(int i = self.leftMetricWidth; i < (self.leftMetricWidth + self.emptyFieldWidth); ++i)
@@ -186,7 +188,7 @@ NSInteger const maximumZoomScale = 5.0;
             
             cell.backgroundColor = ([self.userField[item] integerValue] == fullCell) ? self.fullCellColor : self.emptyCellColor;
             
-            cell.backgroundView = ([self.userField[item] integerValue] == crossCell) ? [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background-tool-cross-it-disabled.png"]] : nil;
+            cell.backgroundView = ([self.userField[item] integerValue] == crossCell) ? [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"instrument-cross.png"]] : nil;
         }
         
     }
@@ -240,7 +242,7 @@ NSInteger const maximumZoomScale = 5.0;
                     isCellChanged = true;
                     [self.userField replaceObjectAtIndex:item withObject:[NSNumber numberWithInteger: crossCell]];
                     datasetCell.backgroundColor = self.emptyCellColor;
-                    datasetCell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background-tool-cross-it-disabled.png"]];
+                    datasetCell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"instrument-cross.png"]];
                 }
                 break;
             }
@@ -264,7 +266,6 @@ NSInteger const maximumZoomScale = 5.0;
 -(void) checkNonagramForWin:(NSString *)userField
 {
     userField = [userField stringByReplacingOccurrencesOfString:@"2" withString:@"0"];
-    
     if ([userField isEqualToString:self.field.field])
     {
         self.field.progress = @"1.0";

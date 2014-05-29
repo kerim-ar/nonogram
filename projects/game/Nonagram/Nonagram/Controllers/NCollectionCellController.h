@@ -11,4 +11,6 @@
 
 @interface NCollectionCellController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, DrEditFileEditDelegate>
 
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @end

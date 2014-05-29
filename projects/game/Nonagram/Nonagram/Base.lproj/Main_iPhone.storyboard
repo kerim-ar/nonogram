@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8ek-6F-N0X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8ek-6F-N0X">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -317,6 +317,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="Rac-5n-m88" id="gu7-2V-Fzt"/>
                         <segue destination="RnX-qA-BWc" kind="push" identifier="SelectNonagram" id="DMQ-9l-tXG"/>
                     </connections>
                 </viewController>
@@ -368,7 +369,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="selected" backgroundImage="selected-btn.png"/>
-                                <state key="highlighted" image="background-tool-clear-it.png"/>
                                 <connections>
                                     <action selector="buttonTappedEmpty:" destination="RnX-qA-BWc" eventType="touchUpInside" id="YpA-ZE-cm3"/>
                                 </connections>
@@ -481,7 +481,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background-tool-clear-it.png" width="26" height="26"/>
         <image name="btn-background.png" width="225" height="48"/>
         <image name="fifth.png" width="328" height="204"/>
         <image name="first.png" width="326" height="208"/>
@@ -490,7 +489,7 @@
         <image name="instrument-cross.png" width="26" height="26"/>
         <image name="instrument-full.png" width="26" height="26"/>
         <image name="instruments-bg.png" width="110" height="55"/>
-        <image name="nonagram-menu.png" width="320" height="568"/>
+        <image name="nonagram-menu.png" width="400" height="710"/>
         <image name="second.png" width="324" height="202"/>
         <image name="selected-btn.png" width="110" height="55"/>
         <image name="sixth.png" width="326" height="206"/>

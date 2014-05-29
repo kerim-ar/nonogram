@@ -61,11 +61,13 @@ static NSString *const kClientSecret = @"";
 
 -(void) viewWillAppear:(BOOL)animated
 {
-   self.navigationController.navigationBar.hidden = NO; 
+    self.navigationController.navigationBar.hidden = NO;
+    [self.collectionView reloadData];
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
+    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -101,7 +103,6 @@ static NSString *const kClientSecret = @"";
 {
     self.field = [self.nonagramManager getNonagrams][indexPath.row];
     [self performSegueWithIdentifier:@"SelectNonagram" sender:self];
-    
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -231,8 +232,168 @@ static NSString *const kClientSecret = @"";
     [self.driveFiles removeObjectsInArray:discardedItems];
 }
 
+-(NSString *)getUserFieldForDB:(NSString *)cells {
+    NSString * userField = @"";
+    
+    NSArray * field = [cells componentsSeparatedByString:@" "];
+    for (int i = 0; i < [field count]; ++i)
+    {
+        userField = (i != [field count] - 1) ? [userField stringByAppendingString:@"0 "] : [userField stringByAppendingString:@"0"];
+    }
+    userField = [userField stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    return userField;
+}
+
+-(NSMutableArray *) getLeftMetric:(NSString *)cells with:(NSString *)width with:(NSString *)height
+{
+    NSArray * field = [cells componentsSeparatedByString:@" "];
+    NSMutableArray *metric = [[NSMutableArray alloc] init];
+    
+    int count = 0;
+    int index = 0;
+    NSInteger strLen = 0;
+    for (int i = 0; i < [height intValue]; ++i)
+    {
+        NSString *newMetric = @"";
+        for (int j = 0; j < [width intValue]; ++j)
+        {
+            if([[field objectAtIndex:index] intValue] == 1)
+            {
+                ++count;
+            }
+
+            if (((count != 0) && (j == [width intValue] - 1)) || ((count != 0) && ([[field objectAtIndex:index] intValue] != 1)))
+            {
+                newMetric = [newMetric stringByAppendingString:[NSString stringWithFormat:@"%d", count]];
+                newMetric = [newMetric stringByAppendingString:@" "];
+                count = 0;
+            }
+            ++index;
+        }
+        strLen = (strLen < [newMetric length]) ? [newMetric length] : strLen;
+        [metric addObject:newMetric];
+    }
+    
+    NSString *newStr = @"";
+    for (int i = 0; i < [metric count]; ++i)
+    {
+        NSString *metricStr = [metric objectAtIndex:i];
+        NSInteger metricLen = [metricStr length];
+        NSString *leftMetric = @"";
+        if(metricLen != strLen)
+        {
+            
+            for (int k = 0; k < ((strLen - metricLen) / 2); ++k)
+            {
+                NSString *zeroWithSpace = [[NSString stringWithFormat:@"%d", 0] stringByAppendingString:@" "];
+                leftMetric = [leftMetric stringByAppendingString:zeroWithSpace];
+                
+            }
+            leftMetric = [leftMetric stringByAppendingString:metricStr];
+            
+        }
+        else
+        {
+            leftMetric = [metricStr stringByAppendingString:leftMetric];
+        }
+        newStr = [newStr stringByAppendingString:leftMetric];
+        
+    }
+    
+    newStr = [newStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSMutableArray *data = [[NSMutableArray alloc] init];
+    [data addObject:[NSString stringWithFormat:@"%ld", (strLen / 2)]];
+    [data addObject:newStr];
+    
+    return data;
+}
+
+-(NSMutableArray *) getTopMetric:(NSString *)cells with:(NSString *)width with:(NSString *)height
+{
+    NSArray *field = [cells componentsSeparatedByString:@" "];
+    NSMutableArray *metric = [[NSMutableArray alloc] init];
+    
+    int count = 0;
+    NSInteger strLen = 0;
+
+    for (int i = 0; i < [width intValue]; ++i)
+    {
+        NSString *newMetric = @"";
+        for (int j = 0; j < [height intValue]; ++j)
+        {
+            int index = j * [width intValue] + i;
+            
+            if([[field objectAtIndex:index] intValue] == 1)
+            {
+                ++count;
+            }
+
+            if (((count != 0) && (j == ([height intValue] - 1))) || ((count != 0) && ([[field objectAtIndex:index] intValue] != 1)))
+            {
+                newMetric = [newMetric stringByAppendingString:[NSString stringWithFormat:@"%d", count]];
+                newMetric = [newMetric stringByAppendingString:@" "];
+                count = 0;
+            }
+        
+        }
+        strLen = (strLen < [newMetric length]) ? [newMetric length] : strLen;
+        
+        [metric addObject:newMetric];
+    }
+    NSString *newStr = @"";
+    NSMutableArray *topMetric = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [metric count]; ++i)
+    {
+        NSString *metricStr = [metric objectAtIndex:i];
+        NSInteger metricLen = [metricStr length];
+        NSString *leftMetric = @"";
+        if(metricLen != strLen)
+        {
+            
+            for (int k = 0; k < ((strLen - metricLen) / 2); ++k)
+            {
+                NSString *zeroWithSpace = [[NSString stringWithFormat:@"%d", 0] stringByAppendingString:@" "];
+                leftMetric = [leftMetric stringByAppendingString:zeroWithSpace];
+                
+            }
+            leftMetric = [leftMetric stringByAppendingString:metricStr];
+            
+        }
+        else
+        {
+            leftMetric = [metricStr stringByAppendingString:leftMetric];
+        }
+        leftMetric = [leftMetric stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        [topMetric addObject:leftMetric];
+        
+    }
+    
+    NSString *topMetricNew = @"";
+    int indexCount = 0;
+    for (int k = 0; k < (strLen / 2); ++k)
+    {
+        for (int i = 0; i < [topMetric count]; ++i)
+        {
+            NSArray *metricLine = [[topMetric objectAtIndex:i] componentsSeparatedByString:@" "];
+            
+            topMetricNew = [topMetricNew stringByAppendingString:[metricLine objectAtIndex:indexCount]];
+            topMetricNew = [topMetricNew stringByAppendingString:@" "];
+            
+        }
+        ++indexCount;
+    }
+    topMetricNew = [topMetricNew stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+
+    NSMutableArray *data = [[NSMutableArray alloc] init];
+    [data addObject:[NSString stringWithFormat:@"%ld", (strLen / 2)]];
+    [data addObject:topMetricNew];
+
+    return data;
+}
+
 -(void)saveNonogramsInDB {
     NNonagramManager *nonogramManager = [[NNonagramManager alloc] init];
+    NSInteger __block count = 0;
     for (GTLDriveFile *file in self.driveFiles) {
         GTMHTTPFetcher *fetcher =
         [self.driveService.fetcherService fetcherWithURLString:file.downloadUrl];
@@ -242,15 +403,29 @@ static NSString *const kClientSecret = @"";
                                                               encoding:NSUTF8StringEncoding];
                 //save nonogram in DB
                 NSArray *params = [fileContent componentsSeparatedByString:@"#"];
-                [nonogramManager saveNonogramWith:[params objectAtIndex:0] and:[params objectAtIndex:1] and:[params objectAtIndex:2] and:[params objectAtIndex:3]];
+                
+                NSString *userField = [self getUserFieldForDB:[params objectAtIndex:3]];
+                NSMutableArray *leftMetricData = [self getLeftMetric:[params objectAtIndex:3] with:[params objectAtIndex:1] with:[params objectAtIndex:2]];
+                NSMutableArray *topMetricData = [self getTopMetric:[params objectAtIndex:3] with:[params objectAtIndex:1] with:[params objectAtIndex:2]];
+                
+                [nonogramManager saveNonogramWith:[params objectAtIndex:0] and:[params objectAtIndex:1] and:[params objectAtIndex:2] and:[params objectAtIndex:3] and:userField and:[topMetricData objectAtIndex:1] and:[leftMetricData objectAtIndex:1] and:[topMetricData objectAtIndex:0] and:[leftMetricData objectAtIndex:0]];
                 NSLog(@"%@", params);
+                ++count;
+                [self reloadCollectiobView:count allCount:[self.driveFiles count]];
             } else {
                 NSLog(@"An error occurred: %@", error);
                 
             }
         }];
+        
     }
 }
 
+-(void)reloadCollectiobView:(NSInteger)count allCount:(NSInteger)allCount
+{
+    if (count == allCount) {
+        [self.collectionView reloadData];
+    }
+}
 
 @end

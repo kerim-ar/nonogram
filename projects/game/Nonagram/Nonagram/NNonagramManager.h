@@ -11,6 +11,6 @@
 @interface NNonagramManager : NSObject
 
 -(NSArray *) getNonagrams;
--(void) saveNonogramWith:(NSString *)title and:(NSString *)width and:(NSString *)height and:(NSString *) cells;
+-(void) saveNonogramWith:(NSString *)title and:(NSString *)width and:(NSString *)height and:(NSString *) cells and:(NSString *) userField and:(NSString *) topMetric and:(NSString *) leftMetric and:(NSString *) topMetricWidth and:(NSString *) leftMetricWidth;
 
 @end
