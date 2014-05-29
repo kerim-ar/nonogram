@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C1021" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="NNonagramField" representedClassName="NNonagramField" syncable="YES">
+        <attribute name="field" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="0" value="0001000111111100010000010100"/>
+            </userInfo>
+        </attribute>
+        <attribute name="height" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="0" value="4"/>
+            </userInfo>
+        </attribute>
+        <attribute name="left_metric" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="left_metric_width" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="progress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="0" value="person"/>
+            </userInfo>
+        </attribute>
+        <attribute name="top_metric" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="top_metric_width" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_field" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="0" value="value"/>
+            </userInfo>
+        </attribute>
+        <attribute name="width" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="0" value="7"/>
+            </userInfo>
+        </attribute>
+        <userInfo>
+            <entry key="0" value="test"/>
+        </userInfo>
+    </entity>
+    <elements>
+        <element name="NNonagramField" positionX="-63" positionY="-18" width="128" height="195"/>
+    </elements>
+</model>
